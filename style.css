@@ -1,4 +1,1247 @@
 /* ========================================
+   STYLEHUB - MAIN STYLESHEET
+======================================== */
+
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Inter", sans-serif;
+
+    background: #f7f5f0;
+
+    color: #171717;
+
+    line-height: 1.6;
+}
+
+
+a {
+    text-decoration: none;
+
+    color: inherit;
+}
+
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+/* ---------- VARIABLES ---------- */
+
+:root {
+
+    --black: #171717;
+
+    --white: #ffffff;
+
+    --gold: #bd9150;
+
+    --light: #f7f5f0;
+
+    --border: #e5e1d9;
+
+    --gray: #747474;
+
+}
+
+
+/* ========================================
+   NAVBAR
+======================================== */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: rgba(247, 245, 240, 0.94);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.nav-container {
+
+    width: min(1200px, 92%);
+
+    height: 78px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.logo {
+
+    font-size: 23px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+}
+
+
+.logo span {
+
+    color: var(--gold);
+
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    gap: 35px;
+
+}
+
+
+.nav-links a {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #555;
+
+    transition: 0.3s;
+
+}
+
+
+.nav-links a:hover {
+
+    color: var(--gold);
+
+}
+
+
+.menu-btn {
+
+    display: none;
+
+    border: none;
+
+    background: none;
+
+    font-size: 26px;
+
+    cursor: pointer;
+
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+
+    width: min(1200px, 92%);
+
+    min-height: 650px;
+
+    margin: 35px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background: var(--black);
+
+    color: white;
+
+}
+
+
+.hero-content {
+
+    padding: 80px 60px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.eyebrow {
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 17px;
+
+}
+
+
+.hero h1 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(52px, 6vw, 82px);
+
+    line-height: 1.02;
+
+    margin-bottom: 25px;
+
+}
+
+
+.hero h1 span {
+
+    display: block;
+
+    color: #d4a762;
+
+}
+
+
+.hero-description {
+
+    max-width: 440px;
+
+    color: #c7c7c7;
+
+    font-size: 15px;
+
+    margin-bottom: 34px;
+
+}
+
+
+.hero-btn {
+
+    width: fit-content;
+
+    padding: 14px 23px;
+
+    border-radius: 5px;
+
+    background: #d4a762;
+
+    color: #111;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+}
+
+
+.hero-btn span {
+
+    margin-left: 8px;
+
+}
+
+
+.hero-btn:hover {
+
+    background: white;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* Hero image */
+
+.hero-image {
+
+    position: relative;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.35)
+        ),
+
+        url("https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=85");
+
+    background-position: center;
+
+    background-size: cover;
+
+}
+
+
+.hero-image-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        #171717 0%,
+        transparent 38%
+    );
+
+}
+
+
+.hero-badge {
+
+    position: absolute;
+
+    right: 30px;
+
+    bottom: 30px;
+
+    padding: 17px 22px;
+
+    background: rgba(255,255,255,0.95);
+
+    color: #111;
+
+    border-radius: 7px;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.hero-badge strong {
+
+    font-size: 26px;
+
+}
+
+
+.hero-badge small {
+
+    color: #777;
+
+    font-size: 11px;
+
+}
+
+
+/* ========================================
+   BRANDS
+======================================== */
+
+.brands-section {
+
+    width: min(1200px, 92%);
+
+    margin: 120px auto;
+
+}
+
+
+.section-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 30px;
+
+    margin-bottom: 40px;
+
+}
+
+
+.section-header h2,
+.category-heading h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 5vw, 55px);
+
+    line-height: 1;
+
+}
+
+
+.section-header h2 span,
+.category-heading h2 span {
+
+    color: var(--gold);
+
+}
+
+
+.section-text {
+
+    max-width: 350px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+
+}
+
+
+/* Search */
+
+.search-container {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    padding: 14px 18px;
+
+    margin-bottom: 30px;
+
+}
+
+
+.search-icon {
+
+    font-size: 25px;
+
+    color: #777;
+
+    margin-right: 10px;
+
+}
+
+
+.search-container input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+
+}
+
+
+/* Brand grid */
+
+.brand-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.brand-card {
+
+    overflow: hidden;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    transition: 0.35s;
+
+}
+
+
+.brand-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,0.08);
+
+}
+
+
+/* Brand logo areas */
+
+.brand-logo {
+
+    height: 170px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 900;
+
+    font-size: 25px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.nike {
+
+    background: #111;
+
+    color: white;
+
+    font-style: italic;
+
+}
+
+
+.adidas {
+
+    background: #e8e8e8;
+
+    color: #111;
+
+}
+
+
+.zara {
+
+    background: #eeeeee;
+
+    color: #111;
+
+    font-family: Georgia, serif;
+
+}
+
+
+.hm {
+
+    background: #e31837;
+
+    color: white;
+
+    font-size: 35px;
+
+}
+
+
+.gucci {
+
+    background: #14251c;
+
+    color: #d6b76c;
+
+    font-family: Georgia, serif;
+
+}
+
+
+.prada {
+
+    background: #eeeae2;
+
+    color: #111;
+
+    font-family: Georgia, serif;
+
+}
+
+
+.levis {
+
+    background: #c91d2b;
+
+    color: white;
+
+}
+
+
+.puma {
+
+    background: #111;
+
+    color: white;
+
+}
+
+
+.newbalance {
+
+    background: #c8102e;
+
+    color: white;
+
+    font-size: 45px;
+
+}
+
+
+.asics {
+
+    background: #193d8f;
+
+    color: white;
+
+}
+
+
+.skechers {
+
+    background: #e9e9e9;
+
+    color: #111;
+
+    font-size: 18px;
+
+}
+
+
+.daraz {
+
+    background: linear-gradient(
+        135deg,
+        #f85606,
+        #ff9f1a
+    );
+
+    color: white;
+
+}
+
+
+/* Brand content */
+
+.brand-content {
+
+    padding: 25px;
+
+}
+
+
+.brand-category {
+
+    color: var(--gold);
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+.brand-content h3 {
+
+    font-size: 21px;
+
+    margin: 6px 0;
+
+}
+
+
+.brand-content p {
+
+    color: var(--gray);
+
+    font-size: 12px;
+
+    min-height: 40px;
+
+    margin-bottom: 19px;
+
+}
+
+
+.visit-link {
+
+    display: inline-block;
+
+    border-bottom: 1px solid #111;
+
+    padding-bottom: 3px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+}
+
+
+.visit-link:hover {
+
+    color: var(--gold);
+
+    border-color: var(--gold);
+
+}
+
+
+.no-results {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #777;
+
+}
+
+
+/* ========================================
+   CATEGORIES
+======================================== */
+
+.categories-section {
+
+    padding: 110px 4%;
+
+    background: #171717;
+
+    color: white;
+
+}
+
+
+.category-heading {
+
+    width: min(1200px, 100%);
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+
+}
+
+
+.category-grid {
+
+    width: min(1200px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+}
+
+
+.category-card {
+
+    min-height: 320px;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: end;
+
+    background-size: cover;
+
+    background-position: center;
+
+    transition: 0.4s;
+
+}
+
+
+.category-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        transparent 30%,
+        rgba(0,0,0,0.9)
+    );
+
+}
+
+
+.category-card > div {
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.category-card small {
+
+    color: #d4a762;
+
+    font-weight: 700;
+
+}
+
+
+.category-card h3 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+
+    margin: 5px 0;
+
+}
+
+
+.category-card p {
+
+    color: #ddd;
+
+    font-size: 11px;
+
+}
+
+
+.category-card:hover {
+
+    transform: scale(1.02);
+
+}
+
+
+/* Category backgrounds */
+
+.men {
+
+    background-image:
+        url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80");
+
+}
+
+
+.women {
+
+    background-image:
+        url("https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80");
+
+}
+
+
+.shoes {
+
+    background-image:
+        url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80");
+
+}
+
+
+.luxury {
+
+    background-image:
+        url("https://images.unsplash.com/photo-1559563458-527698bf5295?auto=format&fit=crop&w=700&q=80");
+
+}
+
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.about-section {
+
+    width: min(1200px, 92%);
+
+    margin: 120px auto;
+
+    padding: 80px;
+
+    border-radius: 20px;
+
+    background: #e8dfcf;
+
+}
+
+
+.about-content {
+
+    max-width: 700px;
+
+}
+
+
+.about-content h2 {
+
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 6vw, 70px);
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+
+}
+
+
+.about-content h2 span {
+
+    color: var(--gold);
+
+}
+
+
+.about-content > p:not(.eyebrow) {
+
+    color: #555;
+
+    font-size: 14px;
+
+    max-width: 620px;
+
+    margin-bottom: 28px;
+
+}
+
+
+.dark-btn {
+
+    display: inline-block;
+
+    padding: 14px 22px;
+
+    background: #171717;
+
+    color: white;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+
+}
+
+
+.dark-btn:hover {
+
+    background: var(--gold);
+
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    padding: 60px 4% 25px;
+
+    background: #111;
+
+    color: white;
+
+}
+
+
+.footer-container {
+
+    width: min(1200px, 100%);
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 40px;
+
+}
+
+
+.footer-text {
+
+    margin-top: 7px;
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+.footer-links a {
+
+    color: #999;
+
+    font-size: 12px;
+
+    transition: 0.3s;
+
+}
+
+
+.footer-links a:hover {
+
+    color: #d4a762;
+
+}
+
+
+.copyright {
+
+    padding-top: 20px;
+
+    border-top: 1px solid #292929;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 10px;
+
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 950px) {
+
+    .hero {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .hero-image {
+
+        min-height: 450px;
+
+    }
+
+
+    .brand-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+
+    .category-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .nav-container {
+
+        height: 68px;
+
+    }
+
+
+    .menu-btn {
+
+        display: block;
+
+    }
+
+
+    .nav-links {
+
+        display: none;
+
+        position: absolute;
+
+        top: 68px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: #f7f5f0;
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        border-bottom: 1px solid var(--border);
+
+    }
+
+
+    .nav-links.active {
+
+        display: flex;
+
+    }
+
+
+    .hero {
+
+        width: 94%;
+
+        margin-top: 15px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .hero-content {
+
+        padding: 55px 30px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 52px;
+
+    }
+
+
+    .hero-image {
+
+        min-height: 350px;
+
+    }
+
+
+    .section-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .brand-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .category-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .about-section {
+
+        padding: 50px 30px;
+
+    }
+
+
+    .footer-container {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 30px;
+
+    }
+
+
+    .footer-links {
+
+        flex-wrap: wrap;
+
+    }
+
+}
+
+
+
+
+
+/* ========================================
    NEW BRAND STYLES
 ======================================== */
 
