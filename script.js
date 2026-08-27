@@ -199,3 +199,12 @@ visitLinks.forEach(function (link) {
     });
 
 });
+/* ========================================
+   SCROLL ANIMATION FIX
+======================================== */
+
+.brand-card.show,
+.category-card.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
