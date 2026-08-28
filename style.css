@@ -240,7 +240,33 @@ font-size: 13px;
 }
 
 /* SEARCH */
+/* ---------- CATEGORY FILTERS ---------- */
 
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    border: 1px solid var(--border);
+    background: white;
+    color: #555;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--black);
+    color: white;
+    border-color: var(--black);
+}
 .search-container {
 display: flex;
 align-items: center;
