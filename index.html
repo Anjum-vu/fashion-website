@@ -1,34 +1,32 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<meta name="description"
-    content="StyleGate - Discover fashion brands and visit their online stores.">
+    <meta name="description"
+          content="StyleGate - Discover fashion brands from Pakistan, India and around the world.">
 
-<title>StyleGate | Discover Fashion</title>
+    <title>StyleGate | Discover Fashion</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
-```
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-```
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 
 <header class="navbar">
+
     <div class="nav-container">
 
         <a href="#home" class="logo">
@@ -42,21 +40,24 @@
             <a href="#about">About</a>
         </nav>
 
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        <button class="menu-btn" id="menuBtn">
             ☰
         </button>
 
     </div>
+
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
     <div class="hero-content">
 
-        <p class="eyebrow">YOUR FASHION GATEWAY</p>
+        <p class="eyebrow">
+            YOUR FASHION GATEWAY
+        </p>
 
         <h1>
             Discover Your
@@ -75,16 +76,20 @@
     </div>
 
     <div class="hero-image">
+
+        <div class="hero-overlay"></div>
+
         <div class="hero-badge">
-            <strong>StyleGate</strong>
-            <small>Fashion • Brands • Style</small>
+            <strong>14+</strong>
+            <small>Fashion Brands</small>
         </div>
+
     </div>
 
 </section>
 
 
-<!-- BRANDS -->
+<!-- ================= BRANDS ================= -->
 
 <section class="brands-section" id="brands">
 
@@ -109,13 +114,15 @@
     <!-- SEARCH -->
 
     <div class="search-box">
+
         <span>⌕</span>
 
         <input
             type="text"
             id="brandSearch"
             placeholder="Search brands..."
-            autocomplete="off">
+        >
+
     </div>
 
 
@@ -123,31 +130,31 @@
 
     <div class="filters">
 
-        <button class="filter active" data-filter="all">
+        <button class="filter-btn active" data-filter="all">
             All
         </button>
 
-        <button class="filter" data-filter="pakistan">
+        <button class="filter-btn" data-filter="pakistan">
             Pakistan
         </button>
 
-        <button class="filter" data-filter="india">
+        <button class="filter-btn" data-filter="india">
             India
         </button>
 
-        <button class="filter" data-filter="international">
+        <button class="filter-btn" data-filter="international">
             International
         </button>
 
-        <button class="filter" data-filter="sports">
+        <button class="filter-btn" data-filter="sports">
             Sports
         </button>
 
-        <button class="filter" data-filter="luxury">
+        <button class="filter-btn" data-filter="luxury">
             Luxury
         </button>
 
-        <button class="filter" data-filter="footwear">
+        <button class="filter-btn" data-filter="footwear">
             Footwear
         </button>
 
@@ -159,18 +166,18 @@
     <div class="brand-grid" id="brandGrid">
 
 
-        <!-- PAKISTAN -->
+        <!-- KHAADI -->
 
         <article class="brand-card"
-            data-country="pakistan"
-            data-category="fashion">
+                 data-category="pakistan fashion">
 
             <div class="brand-logo khaadi">
                 KHAADI
             </div>
 
             <div class="brand-content">
-                <span>PAKISTAN • FASHION</span>
+
+                <small>PAKISTAN • FASHION</small>
 
                 <h3>Khaadi</h3>
 
@@ -178,27 +185,31 @@
                     Pakistani fashion and lifestyle brand.
                 </p>
 
-                <a href="https://www.khaadi.com/"
+                <a
+                    href="https://www.khaadi.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
+        <!-- SAPPHIRE -->
+
         <article class="brand-card"
-            data-country="pakistan"
-            data-category="fashion">
+                 data-category="pakistan fashion">
 
             <div class="brand-logo sapphire">
                 SAPPHIRE
             </div>
 
             <div class="brand-content">
-                <span>PAKISTAN • FASHION</span>
+
+                <small>PAKISTAN • FASHION</small>
 
                 <h3>Sapphire</h3>
 
@@ -206,27 +217,31 @@
                     Clothing, accessories and lifestyle fashion.
                 </p>
 
-                <a href="https://pk.sapphireonline.pk/"
+                <a
+                    href="https://pk.sapphireonline.pk/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
+        <!-- OUTFITTERS -->
+
         <article class="brand-card"
-            data-country="pakistan"
-            data-category="fashion">
+                 data-category="pakistan fashion">
 
             <div class="brand-logo outfitters">
                 OUTFITTERS
             </div>
 
             <div class="brand-content">
-                <span>PAKISTAN • CASUAL</span>
+
+                <small>PAKISTAN • CASUAL</small>
 
                 <h3>Outfitters</h3>
 
@@ -234,27 +249,31 @@
                     Modern casual fashion for everyday style.
                 </p>
 
-                <a href="https://outfitters.com.pk/"
+                <a
+                    href="https://outfitters.com.pk/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
+        <!-- GUL AHMED -->
+
         <article class="brand-card"
-            data-country="pakistan"
-            data-category="fashion">
+                 data-category="pakistan fashion">
 
             <div class="brand-logo gul-ahmed">
                 GUL AHMED
             </div>
 
             <div class="brand-content">
-                <span>PAKISTAN • FASHION</span>
+
+                <small>PAKISTAN • FASHION</small>
 
                 <h3>Gul Ahmed</h3>
 
@@ -262,29 +281,31 @@
                     Clothing, fabrics and lifestyle collections.
                 </p>
 
-                <a href="https://www.gulahmedshop.com/"
+                <a
+                    href="https://www.gulahmedshop.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
-        <!-- INDIA -->
+        <!-- AJIO -->
 
         <article class="brand-card"
-            data-country="india"
-            data-category="fashion">
+                 data-category="india fashion">
 
-            <div class="brand-logo india-brand">
+            <div class="brand-logo ajio">
                 AJIO
             </div>
 
             <div class="brand-content">
-                <span>INDIA • FASHION</span>
+
+                <small>INDIA • FASHION</small>
 
                 <h3>AJIO</h3>
 
@@ -292,27 +313,31 @@
                     Fashion, footwear and lifestyle shopping.
                 </p>
 
-                <a href="https://www.ajio.com/"
+                <a
+                    href="https://www.ajio.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
-        <article class="brand-card"
-            data-country="india"
-            data-category="fashion">
+        <!-- MYNTRA -->
 
-            <div class="brand-logo india-brand">
+        <article class="brand-card"
+                 data-category="india fashion">
+
+            <div class="brand-logo myntra">
                 MYNTRA
             </div>
 
             <div class="brand-content">
-                <span>INDIA • FASHION</span>
+
+                <small>INDIA • FASHION</small>
 
                 <h3>Myntra</h3>
 
@@ -320,29 +345,31 @@
                     Popular Indian fashion and lifestyle platform.
                 </p>
 
-                <a href="https://www.myntra.com/"
+                <a
+                    href="https://www.myntra.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
-        <!-- INTERNATIONAL -->
+        <!-- NIKE -->
 
         <article class="brand-card"
-            data-country="international"
-            data-category="sports">
+                 data-category="international sports footwear">
 
             <div class="brand-logo nike">
                 NIKE
             </div>
 
             <div class="brand-content">
-                <span>INTERNATIONAL • SPORTS</span>
+
+                <small>INTERNATIONAL • SPORTS</small>
 
                 <h3>Nike</h3>
 
@@ -350,27 +377,31 @@
                     Athletic footwear, clothing and lifestyle.
                 </p>
 
-                <a href="https://www.nike.com/"
+                <a
+                    href="https://www.nike.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
+        <!-- ADIDAS -->
+
         <article class="brand-card"
-            data-country="international"
-            data-category="sports">
+                 data-category="international sports footwear">
 
             <div class="brand-logo adidas">
                 ADIDAS
             </div>
 
             <div class="brand-content">
-                <span>INTERNATIONAL • SPORTS</span>
+
+                <small>INTERNATIONAL • SPORTS</small>
 
                 <h3>Adidas</h3>
 
@@ -378,27 +409,31 @@
                     Sportswear, sneakers and street fashion.
                 </p>
 
-                <a href="https://www.adidas.com/"
+                <a
+                    href="https://www.adidas.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
+        <!-- GUCCI -->
+
         <article class="brand-card"
-            data-country="international"
-            data-category="luxury">
+                 data-category="international luxury">
 
             <div class="brand-logo gucci">
                 GUCCI
             </div>
 
             <div class="brand-content">
-                <span>INTERNATIONAL • LUXURY</span>
+
+                <small>INTERNATIONAL • LUXURY</small>
 
                 <h3>Gucci</h3>
 
@@ -406,27 +441,31 @@
                     Italian luxury fashion and accessories.
                 </p>
 
-                <a href="https://www.gucci.com/"
+                <a
+                    href="https://www.gucci.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
+        <!-- PRADA -->
+
         <article class="brand-card"
-            data-country="international"
-            data-category="luxury">
+                 data-category="international luxury">
 
             <div class="brand-logo prada">
                 PRADA
             </div>
 
             <div class="brand-content">
-                <span>INTERNATIONAL • LUXURY</span>
+
+                <small>INTERNATIONAL • LUXURY</small>
 
                 <h3>Prada</h3>
 
@@ -434,27 +473,31 @@
                     Luxury fashion, bags, shoes and accessories.
                 </p>
 
-                <a href="https://www.prada.com/"
+                <a
+                    href="https://www.prada.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
+        <!-- NEW BALANCE -->
+
         <article class="brand-card"
-            data-country="international"
-            data-category="footwear">
+                 data-category="international sports footwear">
 
             <div class="brand-logo newbalance">
                 NB
             </div>
 
             <div class="brand-content">
-                <span>INTERNATIONAL • FOOTWEAR</span>
+
+                <small>INTERNATIONAL • FOOTWEAR</small>
 
                 <h3>New Balance</h3>
 
@@ -462,27 +505,31 @@
                     Performance shoes and sportswear.
                 </p>
 
-                <a href="https://www.newbalance.com/"
+                <a
+                    href="https://www.newbalance.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
+        <!-- CONVERSE -->
+
         <article class="brand-card"
-            data-country="international"
-            data-category="footwear">
+                 data-category="international footwear">
 
             <div class="brand-logo converse">
                 CONVERSE
             </div>
 
             <div class="brand-content">
-                <span>INTERNATIONAL • FOOTWEAR</span>
+
+                <small>INTERNATIONAL • FOOTWEAR</small>
 
                 <h3>Converse</h3>
 
@@ -490,27 +537,31 @@
                     Iconic sneakers and casual footwear.
                 </p>
 
-                <a href="https://www.converse.com/"
+                <a
+                    href="https://www.converse.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
+        <!-- ZARA -->
+
         <article class="brand-card"
-            data-country="international"
-            data-category="fashion">
+                 data-category="international fashion">
 
             <div class="brand-logo zara">
                 ZARA
             </div>
 
             <div class="brand-content">
-                <span>INTERNATIONAL • FASHION</span>
+
+                <small>INTERNATIONAL • FASHION</small>
 
                 <h3>Zara</h3>
 
@@ -518,27 +569,31 @@
                     Contemporary clothing and accessories.
                 </p>
 
-                <a href="https://www.zara.com/"
+                <a
+                    href="https://www.zara.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
 
 
+        <!-- H&M -->
+
         <article class="brand-card"
-            data-country="international"
-            data-category="fashion">
+                 data-category="international fashion">
 
             <div class="brand-logo hm">
                 H&M
             </div>
 
             <div class="brand-content">
-                <span>INTERNATIONAL • FASHION</span>
+
+                <small>INTERNATIONAL • FASHION</small>
 
                 <h3>H&M</h3>
 
@@ -546,12 +601,14 @@
                     Trend-focused everyday fashion.
                 </p>
 
-                <a href="https://www2.hm.com/"
+                <a
+                    href="https://www2.hm.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="visit-link">
+                    class="visit-btn">
                     Visit Store →
                 </a>
+
             </div>
 
         </article>
@@ -561,46 +618,51 @@
 
 
     <div id="noResults" class="no-results">
-        No brands found.
+        No brand found.
     </div>
 
 </section>
 
 
-<!-- CATEGORIES -->
+<!-- ================= CATEGORIES ================= -->
 
 <section class="categories" id="categories">
 
-    <div class="section-heading">
-        <p class="eyebrow">FIND YOUR STYLE</p>
+    <div class="category-heading">
+
+        <p class="eyebrow">
+            FIND YOUR STYLE
+        </p>
 
         <h2>
             Shop by <span>Category</span>
         </h2>
+
     </div>
+
 
     <div class="category-grid">
 
-        <a href="#brands" class="category-card">
-            <strong>01</strong>
+        <a href="#brands" class="category-card fashion">
+            <span>01</span>
             <h3>Fashion</h3>
             <p>Explore fashion brands →</p>
         </a>
 
-        <a href="#brands" class="category-card">
-            <strong>02</strong>
+        <a href="#brands" class="category-card sports">
+            <span>02</span>
             <h3>Sports</h3>
             <p>Explore sports brands →</p>
         </a>
 
-        <a href="#brands" class="category-card">
-            <strong>03</strong>
+        <a href="#brands" class="category-card shoes">
+            <span>03</span>
             <h3>Footwear</h3>
             <p>Find shoes & sneakers →</p>
         </a>
 
-        <a href="#brands" class="category-card">
-            <strong>04</strong>
+        <a href="#brands" class="category-card luxury">
+            <span>04</span>
             <h3>Luxury</h3>
             <p>Discover luxury brands →</p>
         </a>
@@ -610,11 +672,13 @@
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section class="about" id="about">
 
-    <p class="eyebrow">ABOUT STYLEGATE</p>
+    <p class="eyebrow">
+        ABOUT STYLEGATE
+    </p>
 
     <h2>
         One Gateway.
@@ -627,20 +691,21 @@
         Find a brand, explore its store and discover your style.
     </p>
 
-    <a href="#brands" class="main-btn dark">
+    <a href="#brands" class="main-btn">
         Explore Brands →
     </a>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div class="footer-inner">
+    <div class="footer-top">
 
         <div>
+
             <a href="#home" class="logo">
                 STYLE<span>GATE</span>
             </a>
@@ -648,13 +713,16 @@
             <p>
                 Discover fashion. Find your style.
             </p>
+
         </div>
 
         <div class="footer-links">
+
             <a href="#home">Home</a>
             <a href="#brands">Brands</a>
             <a href="#categories">Categories</a>
             <a href="#about">About</a>
+
         </div>
 
     </div>
@@ -667,7 +735,6 @@
 
 
 <script src="script.js"></script>
-```
 
 </body>
 </html>
