@@ -1,134 +1,728 @@
 /* =========================
-STYLEGATE JAVASCRIPT
+   STYLEGATE CSS
 ========================= */
 
-/* MOBILE MENU */
-
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-
-menuBtn.addEventListener("click", () => {
-navLinks.classList.toggle("active");
-});
-
-/* CLOSE MOBILE MENU */
-
-document.querySelectorAll(".nav-links a").forEach(link => {
-
-```
-link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
-});
-```
-
-});
-
-/* SEARCH + FILTER */
-
-const searchInput = document.getElementById("brandSearch");
-const cards = document.querySelectorAll(".brand-card");
-const filters = document.querySelectorAll(".filter");
-const noResults = document.getElementById("noResults");
-
-let currentFilter = "all";
-
-function showBrands() {
-
-```
-const search = searchInput.value.toLowerCase().trim();
-
-let visible = 0;
-
-
-cards.forEach(card => {
-
-    const name =
-        card.querySelector("h3").textContent.toLowerCase();
-
-    const info =
-        card.querySelector(".brand-content").textContent.toLowerCase();
-
-    const country =
-        card.dataset.country;
-
-    const category =
-        card.dataset.category;
-
-
-    const matchesSearch =
-        name.includes(search) ||
-        info.includes(search);
-
-
-    let matchesFilter = true;
-
-
-    if (currentFilter === "pakistan") {
-        matchesFilter = country === "pakistan";
-    }
-
-    else if (currentFilter === "india") {
-        matchesFilter = country === "india";
-    }
-
-    else if (currentFilter === "international") {
-        matchesFilter = country === "international";
-    }
-
-    else if (currentFilter === "sports") {
-        matchesFilter = category === "sports";
-    }
-
-    else if (currentFilter === "luxury") {
-        matchesFilter = category === "luxury";
-    }
-
-    else if (currentFilter === "footwear") {
-        matchesFilter = category === "footwear";
-    }
-
-
-    if (matchesSearch && matchesFilter) {
-
-        card.style.display = "";
-
-        visible++;
-
-    } else {
-
-        card.style.display = "none";
-
-    }
-
-});
-
-
-noResults.style.display =
-    visible === 0 ? "block" : "none";
-```
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-searchInput.addEventListener("input", showBrands);
+html {
+    scroll-behavior: smooth;
+}
 
-/* FILTER BUTTONS */
+body {
+    font-family: "Inter", sans-serif;
+    background: #f7f5f0;
+    color: #171717;
+    line-height: 1.6;
+}
 
-filters.forEach(button => {
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-```
-button.addEventListener("click", () => {
+button,
+input {
+    font-family: inherit;
+}
 
-    filters.forEach(btn =>
-        btn.classList.remove("active")
+:root {
+    --black: #171717;
+    --gold: #bd9150;
+    --light: #f7f5f0;
+    --white: #fff;
+    --gray: #777;
+    --border: #e5e1d9;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(247,245,240,.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+    width: min(1200px, 92%);
+    height: 72px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.menu-btn {
+    display: none;
+    border: 0;
+    background: none;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    width: min(1200px, 92%);
+    min-height: 600px;
+    margin: 30px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    overflow: hidden;
+    border-radius: 22px;
+
+    background: var(--black);
+    color: white;
+}
+
+.hero-content {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(50px, 6vw, 80px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #d4a762;
+}
+
+.hero-text {
+    max-width: 450px;
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+.main-btn {
+    display: inline-block;
+    width: fit-content;
+    padding: 13px 21px;
+
+    background: var(--gold);
+    color: #111;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.main-btn:hover {
+    background: white;
+}
+
+.hero-image {
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.1),
+            rgba(0,0,0,.4)
+        ),
+        url("https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-badge {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+
+    padding: 15px 20px;
+
+    background: white;
+    color: #111;
+
+    border-radius: 7px;
+}
+
+.hero-badge strong {
+    display: block;
+    font-size: 25px;
+}
+
+.hero-badge small {
+    color: #777;
+}
+
+
+/* =========================
+   BRANDS
+========================= */
+
+.brands-section {
+    width: min(1200px, 92%);
+    margin: 100px auto;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.section-header h2,
+.category-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(38px, 5vw, 55px);
+    line-height: 1;
+}
+
+.section-header h2 span,
+.category-heading h2 span,
+.about h2 span {
+    color: var(--gold);
+}
+
+.section-header > p {
+    max-width: 350px;
+    color: var(--gray);
+    font-size: 13px;
+}
+
+
+/* SEARCH */
+
+.search-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    padding: 14px 18px;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.search-box span {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #777;
+}
+
+.search-box input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    font-size: 14px;
+}
+
+
+/* FILTERS */
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    border: 1px solid var(--border);
+    background: white;
+
+    padding: 9px 15px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--black);
+    color: white;
+}
+
+
+/* BRAND GRID */
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.brand-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+
+    transition: .3s;
+}
+
+.brand-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.08);
+}
+
+.brand-logo {
+    height: 160px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+
+/* LOGO COLORS */
+
+.khaadi {
+    background: #111;
+    color: #d6b76c;
+    font-family: Georgia, serif;
+}
+
+.sapphire {
+    background: #eee9e2;
+    color: #111;
+}
+
+.outfitters {
+    background: #111;
+    color: white;
+}
+
+.gul-ahmed {
+    background: #1d2935;
+    color: #d7b56d;
+}
+
+.ajio {
+    background: #111;
+    color: white;
+}
+
+.myntra {
+    background: #ff3f6c;
+    color: white;
+}
+
+.nike {
+    background: #111;
+    color: white;
+    font-style: italic;
+}
+
+.adidas {
+    background: #e8e8e8;
+    color: #111;
+}
+
+.gucci {
+    background: #14251c;
+    color: #d6b76c;
+}
+
+.prada {
+    background: #eeeae2;
+    color: #111;
+}
+
+.newbalance {
+    background: #c8102e;
+    color: white;
+}
+
+.converse {
+    background: #e9e9e9;
+    color: #111;
+}
+
+.zara {
+    background: #eee;
+    color: #111;
+    font-family: Georgia, serif;
+}
+
+.hm {
+    background: #e31837;
+    color: white;
+}
+
+
+/* BRAND CONTENT */
+
+.brand-content {
+    padding: 22px;
+}
+
+.brand-content small {
+    color: var(--gold);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.brand-content h3 {
+    margin: 6px 0;
+    font-size: 20px;
+}
+
+.brand-content p {
+    color: var(--gray);
+    font-size: 12px;
+    min-height: 38px;
+    margin-bottom: 18px;
+}
+
+.visit-btn {
+    display: inline-block;
+
+    border-bottom: 1px solid #111;
+    padding-bottom: 3px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.visit-btn:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+}
+
+
+/* NO RESULTS */
+
+.no-results {
+    display: none;
+    text-align: center;
+    padding: 40px;
+    color: #777;
+}
+
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories {
+    background: var(--black);
+    color: white;
+    padding: 100px 4%;
+}
+
+.category-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.category-grid {
+    width: min(1200px, 100%);
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.category-card {
+    min-height: 250px;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    border-radius: 10px;
+
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,.9)
     );
+}
 
-    button.classList.add("active");
+.category-card > * {
+    position: relative;
+    z-index: 1;
+}
 
-    currentFilter = button.dataset.filter;
+.category-card span {
+    color: var(--gold);
+}
 
-    showBrands();
+.category-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
 
-});
-```
+.category-card p {
+    color: #ddd;
+    font-size: 11px;
+}
 
-});
+.fashion {
+    background-image: url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=80");
+}
+
+.sports {
+    background-image: url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80");
+}
+
+.shoes {
+    background-image: url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80");
+}
+
+.luxury {
+    background-image: url("https://images.unsplash.com/photo-1559563458-527698bf5295?auto=format&fit=crop&w=700&q=80");
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    width: min(1000px, 92%);
+    margin: 100px auto;
+    padding: 70px;
+
+    background: #e8dfcf;
+    border-radius: 20px;
+}
+
+.about h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 6vw, 65px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.about > p:not(.eyebrow) {
+    max-width: 650px;
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111;
+    color: white;
+    padding: 50px 4% 20px;
+}
+
+.footer-top {
+    width: min(1200px, 100%);
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding-bottom: 35px;
+}
+
+.footer-top p {
+    color: #777;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a {
+    color: #999;
+    font-size: 12px;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #292929;
+    padding-top: 18px;
+
+    color: #666;
+    font-size: 10px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 950px) {
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        min-height: 400px;
+    }
+
+    .brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .nav-container {
+        height: 65px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+
+        position: absolute;
+        top: 65px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 20px;
+
+        background: var(--light);
+
+        flex-direction: column;
+        gap: 18px;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hero {
+        width: 94%;
+        margin-top: 15px;
+    }
+
+    .hero-content {
+        padding: 45px 28px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-image {
+        min-height: 320px;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .brand-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about {
+        padding: 45px 28px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
