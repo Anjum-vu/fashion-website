@@ -1,107 +1,107 @@
-/* ========================================
-   STYLEHUB JAVASCRIPT
-======================================== */
+/* STYLEHUB JAVASCRIPT */
 
-
-/* ---------- MOBILE MENU ---------- */
+/* MOBILE MENU */
 
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
-if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", function () {
-        navLinks.classList.toggle("active");
-    });
-}
+menuBtn.addEventListener("click", function () {
+navLinks.classList.toggle("active");
+});
+
+/* CLOSE MENU */
+
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+
+```
+link.addEventListener("click", function () {
+    navLinks.classList.remove("active");
+});
+```
+
+});
+
+/* BRAND SEARCH + FILTER */
+
+const search = document.getElementById("brandSearch");
+const cards = document.querySelectorAll(".brand-card");
+const buttons = document.querySelectorAll(".filter-btn");
+const noResults = document.getElementById("noResults");
+
+let selectedFilter = "all";
+
+function showBrands() {
+
+```
+const text = search.value.toLowerCase().trim();
+
+let visibleCards = 0;
 
 
-/* Close mobile menu */
+cards.forEach(function (card) {
 
-const navItems = document.querySelectorAll(".nav-links a");
+    const name = card.querySelector("h3").textContent.toLowerCase();
+    const category = card.querySelector("small").textContent.toLowerCase();
+    const description = card.querySelector("p").textContent.toLowerCase();
 
-navItems.forEach(function (item) {
-    item.addEventListener("click", function () {
-        navLinks.classList.remove("active");
-    });
+
+    const searchMatch =
+        name.includes(text) ||
+        category.includes(text) ||
+        description.includes(text);
+
+
+    const filterMatch =
+        selectedFilter === "all" ||
+        category.includes(selectedFilter);
+
+
+    if (searchMatch && filterMatch) {
+
+        card.style.display = "";
+
+        visibleCards++;
+
+    } else {
+
+        card.style.display = "none";
+
+    }
+
 });
 
 
-/* ========================================
-   BRAND SEARCH
-======================================== */
-
-const searchInput = document.getElementById("brandSearch");
-const brandCards = document.querySelectorAll(".brand-card");
-const noResults = document.getElementById("noResults");
-
-
-if (searchInput) {
-
-    searchInput.addEventListener("input", function () {
-
-        const searchText =
-            searchInput.value.toLowerCase().trim();
-
-        let found = 0;
-
-        brandCards.forEach(function (card) {
-
-            const brandName =
-                card.querySelector("h3")?.textContent.toLowerCase() || "";
-
-            const category =
-                card.querySelector(".brand-category")?.textContent.toLowerCase() || "";
-
-            const description =
-                card.querySelector(".brand-content p")?.textContent.toLowerCase() || "";
-
-            const matches =
-                searchText === "" ||
-                brandName.includes(searchText) ||
-                category.includes(searchText) ||
-                description.includes(searchText);
-
-            if (matches) {
-                card.style.display = "";
-                found++;
-            } else {
-                card.style.display = "none";
-            }
-
-        });
-
-
-        if (noResults) {
-            noResults.style.display =
-                found === 0 ? "block" : "none";
-        }
-
-    });
+if (visibleCards === 0) {
+    noResults.style.display = "block";
+} else {
+    noResults.style.display = "none";
+}
+```
 
 }
 
+/* SEARCH */
 
-/* ========================================
-   IMPORTANT:
-   DO NOT HIDE BRAND CARDS
-======================================== */
+search.addEventListener("input", showBrands);
 
-/* Cards are visible by default */
+/* FILTER BUTTONS */
 
+buttons.forEach(function (button) {
 
-/* ========================================
-   EXTERNAL LINKS
-======================================== */
+```
+button.addEventListener("click", function () {
 
-const visitLinks =
-    document.querySelectorAll(".visit-link");
-
-visitLinks.forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-        console.log("Opening:", link.href);
-
+    buttons.forEach(function (btn) {
+        btn.classList.remove("active");
     });
+
+    button.classList.add("active");
+
+    selectedFilter = button.dataset.filter;
+
+    showBrands();
+
+});
+```
 
 });
