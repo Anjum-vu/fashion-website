@@ -1,119 +1,134 @@
-/* ========================================
-   STYLEHUB JAVASCRIPT
-======================================== */
+/* =========================
+STYLEGATE JAVASCRIPT
+========================= */
 
-
-/* ---------- MOBILE MENU ---------- */
+/* MOBILE MENU */
 
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
-if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
-}
+menuBtn.addEventListener("click", () => {
+navLinks.classList.toggle("active");
+});
 
-
-/* ---------- CLOSE MOBILE MENU ---------- */
+/* CLOSE MOBILE MENU */
 
 document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-    });
+
+```
+link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+});
+```
+
+});
+
+/* SEARCH + FILTER */
+
+const searchInput = document.getElementById("brandSearch");
+const cards = document.querySelectorAll(".brand-card");
+const filters = document.querySelectorAll(".filter");
+const noResults = document.getElementById("noResults");
+
+let currentFilter = "all";
+
+function showBrands() {
+
+```
+const search = searchInput.value.toLowerCase().trim();
+
+let visible = 0;
+
+
+cards.forEach(card => {
+
+    const name =
+        card.querySelector("h3").textContent.toLowerCase();
+
+    const info =
+        card.querySelector(".brand-content").textContent.toLowerCase();
+
+    const country =
+        card.dataset.country;
+
+    const category =
+        card.dataset.category;
+
+
+    const matchesSearch =
+        name.includes(search) ||
+        info.includes(search);
+
+
+    let matchesFilter = true;
+
+
+    if (currentFilter === "pakistan") {
+        matchesFilter = country === "pakistan";
+    }
+
+    else if (currentFilter === "india") {
+        matchesFilter = country === "india";
+    }
+
+    else if (currentFilter === "international") {
+        matchesFilter = country === "international";
+    }
+
+    else if (currentFilter === "sports") {
+        matchesFilter = category === "sports";
+    }
+
+    else if (currentFilter === "luxury") {
+        matchesFilter = category === "luxury";
+    }
+
+    else if (currentFilter === "footwear") {
+        matchesFilter = category === "footwear";
+    }
+
+
+    if (matchesSearch && matchesFilter) {
+
+        card.style.display = "";
+
+        visible++;
+
+    } else {
+
+        card.style.display = "none";
+
+    }
+
 });
 
 
-/* ---------- BRAND SEARCH ---------- */
-
-const searchInput = document.getElementById("brandSearch");
-const brandCards = document.querySelectorAll(".brand-card");
-const noResults = document.getElementById("noResults");
-
-if (searchInput) {
-
-    searchInput.addEventListener("input", () => {
-
-        const searchText = searchInput.value.toLowerCase().trim();
-
-        let found = 0;
-
-        brandCards.forEach(card => {
-
-            const text = card.textContent.toLowerCase();
-
-            if (text.includes(searchText)) {
-                card.style.display = "";
-                found++;
-            } else {
-                card.style.display = "none";
-            }
-
-        });
-
-        if (noResults) {
-            noResults.style.display =
-                found === 0 ? "block" : "none";
-        }
-
-    });
+noResults.style.display =
+    visible === 0 ? "block" : "none";
+```
 
 }
 
+searchInput.addEventListener("input", showBrands);
 
-/* ---------- CATEGORY FILTER ---------- */
+/* FILTER BUTTONS */
 
-const filterButtons = document.querySelectorAll(".filter-btn");
+filters.forEach(button => {
 
-filterButtons.forEach(button => {
+```
+button.addEventListener("click", () => {
 
-    button.addEventListener("click", () => {
+    filters.forEach(btn =>
+        btn.classList.remove("active")
+    );
 
-        const filter = button.dataset.filter;
+    button.classList.add("active");
 
-        /* Active button */
+    currentFilter = button.dataset.filter;
 
-        filterButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
-
-        button.classList.add("active");
-
-
-        /* Show / hide brands */
-
-        brandCards.forEach(card => {
-
-            const category =
-                card.querySelector(".brand-category")?.textContent.toLowerCase() || "";
-
-            if (filter === "all") {
-
-                card.style.display = "";
-
-            } else if (category.includes(filter)) {
-
-                card.style.display = "";
-
-            } else {
-
-                card.style.display = "none";
-
-            }
-
-        });
-
-    });
+    showBrands();
 
 });
-
-
-/* ---------- EXTERNAL LINKS ---------- */
-
-document.querySelectorAll(".visit-link").forEach(link => {
-
-    link.addEventListener("click", () => {
-        console.log("Opening:", link.href);
-    });
+```
 
 });
