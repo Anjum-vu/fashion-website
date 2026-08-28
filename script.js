@@ -1,107 +1,119 @@
-/* STYLEHUB JAVASCRIPT */
+/* ========================================
+   STYLEHUB JAVASCRIPT
+======================================== */
 
-/* MOBILE MENU */
+
+/* ---------- MOBILE MENU ---------- */
 
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
-menuBtn.addEventListener("click", function () {
-navLinks.classList.toggle("active");
+if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+}
+
+
+/* ---------- CLOSE MOBILE MENU ---------- */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
 });
 
-/* CLOSE MENU */
 
-document.querySelectorAll(".nav-links a").forEach(function (link) {
+/* ---------- BRAND SEARCH ---------- */
 
-```
-link.addEventListener("click", function () {
-    navLinks.classList.remove("active");
-});
-```
-
-});
-
-/* BRAND SEARCH + FILTER */
-
-const search = document.getElementById("brandSearch");
-const cards = document.querySelectorAll(".brand-card");
-const buttons = document.querySelectorAll(".filter-btn");
+const searchInput = document.getElementById("brandSearch");
+const brandCards = document.querySelectorAll(".brand-card");
 const noResults = document.getElementById("noResults");
 
-let selectedFilter = "all";
+if (searchInput) {
 
-function showBrands() {
+    searchInput.addEventListener("input", () => {
 
-```
-const text = search.value.toLowerCase().trim();
+        const searchText = searchInput.value.toLowerCase().trim();
 
-let visibleCards = 0;
+        let found = 0;
 
+        brandCards.forEach(card => {
 
-cards.forEach(function (card) {
+            const text = card.textContent.toLowerCase();
 
-    const name = card.querySelector("h3").textContent.toLowerCase();
-    const category = card.querySelector("small").textContent.toLowerCase();
-    const description = card.querySelector("p").textContent.toLowerCase();
+            if (text.includes(searchText)) {
+                card.style.display = "";
+                found++;
+            } else {
+                card.style.display = "none";
+            }
 
+        });
 
-    const searchMatch =
-        name.includes(text) ||
-        category.includes(text) ||
-        description.includes(text);
+        if (noResults) {
+            noResults.style.display =
+                found === 0 ? "block" : "none";
+        }
 
-
-    const filterMatch =
-        selectedFilter === "all" ||
-        category.includes(selectedFilter);
-
-
-    if (searchMatch && filterMatch) {
-
-        card.style.display = "";
-
-        visibleCards++;
-
-    } else {
-
-        card.style.display = "none";
-
-    }
-
-});
-
-
-if (visibleCards === 0) {
-    noResults.style.display = "block";
-} else {
-    noResults.style.display = "none";
-}
-```
-
-}
-
-/* SEARCH */
-
-search.addEventListener("input", showBrands);
-
-/* FILTER BUTTONS */
-
-buttons.forEach(function (button) {
-
-```
-button.addEventListener("click", function () {
-
-    buttons.forEach(function (btn) {
-        btn.classList.remove("active");
     });
 
-    button.classList.add("active");
+}
 
-    selectedFilter = button.dataset.filter;
 
-    showBrands();
+/* ---------- CATEGORY FILTER ---------- */
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const filter = button.dataset.filter;
+
+        /* Active button */
+
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+
+        /* Show / hide brands */
+
+        brandCards.forEach(card => {
+
+            const category =
+                card.querySelector(".brand-category")?.textContent.toLowerCase() || "";
+
+            if (filter === "all") {
+
+                card.style.display = "";
+
+            } else if (category.includes(filter)) {
+
+                card.style.display = "";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
 
 });
-```
+
+
+/* ---------- EXTERNAL LINKS ---------- */
+
+document.querySelectorAll(".visit-link").forEach(link => {
+
+    link.addEventListener("click", () => {
+        console.log("Opening:", link.href);
+    });
 
 });
