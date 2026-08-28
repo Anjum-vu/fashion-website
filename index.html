@@ -1,1376 +1,673 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+```
+<meta name="description"
+    content="StyleGate - Discover fashion brands and visit their online stores.">
 
-    <meta name="description"
-          content="StyleHub - Discover fashion brands from Pakistan and around the world.">
+<title>StyleGate | Discover Fashion</title>
 
-    <title>StyleHub | Discover Your Style</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-          rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+```
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-    <!-- ================= NAVBAR ================= -->
+```
+<!-- NAVBAR -->
 
-    <header class="navbar">
+<header class="navbar">
+    <div class="nav-container">
 
-        <div class="nav-container">
+        <a href="#home" class="logo">
+            STYLE<span>GATE</span>
+        </a>
 
-            <a href="#home" class="logo">
-                STYLE<span>HUB</span>
-            </a>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#brands">Brands</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+        </nav>
 
-            <nav class="nav-links" id="navLinks">
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+            ☰
+        </button>
 
-                <a href="#home">Home</a>
+    </div>
+</header>
 
-                <a href="#brands">Brands</a>
 
-                <a href="#categories">Categories</a>
+<!-- HERO -->
 
-                <a href="#about">About</a>
+<section class="hero" id="home">
 
-            </nav>
+    <div class="hero-content">
 
-            <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-                ☰
-            </button>
+        <p class="eyebrow">YOUR FASHION GATEWAY</p>
 
+        <h1>
+            Discover Your
+            <span>Perfect Style.</span>
+        </h1>
+
+        <p class="hero-text">
+            Discover popular fashion brands from Pakistan,
+            India and around the world — all in one place.
+        </p>
+
+        <a href="#brands" class="main-btn">
+            Explore Brands →
+        </a>
+
+    </div>
+
+    <div class="hero-image">
+        <div class="hero-badge">
+            <strong>StyleGate</strong>
+            <small>Fashion • Brands • Style</small>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- BRANDS -->
+
+<section class="brands-section" id="brands">
+
+    <div class="section-header">
+
+        <div>
+            <p class="eyebrow">EXPLORE</p>
+
+            <h2>
+                Fashion <span>Brands</span>
+            </h2>
         </div>
 
-    </header>
+        <p>
+            Find a brand and visit its online store
+            with one click.
+        </p>
+
+    </div>
 
 
-    <!-- ================= HERO ================= -->
+    <!-- SEARCH -->
 
-    <section class="hero" id="home">
+    <div class="search-box">
+        <span>⌕</span>
 
-        <div class="hero-content">
-
-            <p class="eyebrow">
-                YOUR FASHION DESTINATION
-            </p>
-
-            <h1>
-                Discover Your
-                <span>Perfect Style.</span>
-            </h1>
-
-            <p class="hero-description">
-                Explore popular fashion brands from Pakistan
-                and around the world — all in one place.
-            </p>
-
-            <a href="#brands" class="hero-btn">
-                Explore Brands
-                <span>→</span>
-            </a>
-
-        </div>
+        <input
+            type="text"
+            id="brandSearch"
+            placeholder="Search brands..."
+            autocomplete="off">
+    </div>
 
 
-        <div class="hero-image">
+    <!-- FILTERS -->
 
-            <div class="hero-image-overlay"></div>
+    <div class="filters">
 
-            <div class="hero-badge">
+        <button class="filter active" data-filter="all">
+            All
+        </button>
 
-                <strong>29+</strong>
+        <button class="filter" data-filter="pakistan">
+            Pakistan
+        </button>
 
-                <small>
-                    Popular Brands
-                </small>
+        <button class="filter" data-filter="india">
+            India
+        </button>
 
+        <button class="filter" data-filter="international">
+            International
+        </button>
+
+        <button class="filter" data-filter="sports">
+            Sports
+        </button>
+
+        <button class="filter" data-filter="luxury">
+            Luxury
+        </button>
+
+        <button class="filter" data-filter="footwear">
+            Footwear
+        </button>
+
+    </div>
+
+
+    <!-- BRAND GRID -->
+
+    <div class="brand-grid" id="brandGrid">
+
+
+        <!-- PAKISTAN -->
+
+        <article class="brand-card"
+            data-country="pakistan"
+            data-category="fashion">
+
+            <div class="brand-logo khaadi">
+                KHAADI
             </div>
 
-        </div>
+            <div class="brand-content">
+                <span>PAKISTAN • FASHION</span>
 
-    </section>
+                <h3>Khaadi</h3>
 
-
-    <!-- ================= BRANDS ================= -->
-
-    <section class="brands-section" id="brands">
-
-        <div class="section-header">
-
-            <div>
-
-                <p class="eyebrow">
-                    EXPLORE
+                <p>
+                    Pakistani fashion and lifestyle brand.
                 </p>
 
-                <h2>
-                    Featured <span>Brands</span>
-                </h2>
-
+                <a href="https://www.khaadi.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
             </div>
 
-            <p class="section-text">
-                Discover fashion, footwear and lifestyle
-                brands and visit their official websites.
-            </p>
+        </article>
 
-        </div>
 
+        <article class="brand-card"
+            data-country="pakistan"
+            data-category="fashion">
 
-        <!-- SEARCH -->
+            <div class="brand-logo sapphire">
+                SAPPHIRE
+            </div>
 
-        <div class="search-container">
+            <div class="brand-content">
+                <span>PAKISTAN • FASHION</span>
 
-            <span class="search-icon">⌕</span>
+                <h3>Sapphire</h3>
 
-            <input
-                type="text"
-                id="brandSearch"
-                placeholder="Search for a brand..."
-                autocomplete="off"
-            >
+                <p>
+                    Clothing, accessories and lifestyle fashion.
+                </p>
 
-        </div>
-<!-- CATEGORY FILTERS -->
+                <a href="https://pk.sapphireonline.pk/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-<div class="category-filters">
+        </article>
 
-    <button class="filter-btn active" data-filter="all">
-        All
-    </button>
 
-    <button class="filter-btn" data-filter="pakistan">
-        Pakistan
-    </button>
+        <article class="brand-card"
+            data-country="pakistan"
+            data-category="fashion">
 
-    <button class="filter-btn" data-filter="international">
-        International
-    </button>
+            <div class="brand-logo outfitters">
+                OUTFITTERS
+            </div>
 
-    <button class="filter-btn" data-filter="sports">
-        Sports
-    </button>
+            <div class="brand-content">
+                <span>PAKISTAN • CASUAL</span>
 
-    <button class="filter-btn" data-filter="luxury">
-        Luxury
-    </button>
+                <h3>Outfitters</h3>
 
-    <button class="filter-btn" data-filter="footwear">
-        Footwear
-    </button>
+                <p>
+                    Modern casual fashion for everyday style.
+                </p>
 
-</div>
-       
+                <a href="https://outfitters.com.pk/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-<!-- BRAND GRID -->
+        </article>
 
-<div class="brand-grid" id="brandGrid">
-        
 
+        <article class="brand-card"
+            data-country="pakistan"
+            data-category="fashion">
 
-            <!-- ================= PAKISTAN BRANDS ================= -->
+            <div class="brand-logo gul-ahmed">
+                GUL AHMED
+            </div>
 
+            <div class="brand-content">
+                <span>PAKISTAN • FASHION</span>
 
-            <!-- KHAADI -->
+                <h3>Gul Ahmed</h3>
 
-            <article class="brand-card">
+                <p>
+                    Clothing, fabrics and lifestyle collections.
+                </p>
 
-                <div class="brand-logo khaadi">
-                    KHAADI
-                </div>
+                <a href="https://www.gulahmedshop.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-                <div class="brand-content">
+        </article>
 
-                    <span class="brand-category">
-                        PAKISTAN • FASHION
-                    </span>
 
-                    <h3>Khaadi</h3>
+        <!-- INDIA -->
 
-                    <p>
-                        Popular Pakistani fashion and
-                        lifestyle brand.
-                    </p>
+        <article class="brand-card"
+            data-country="india"
+            data-category="fashion">
 
-                    <a href="https://www.khaadi.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
+            <div class="brand-logo india-brand">
+                AJIO
+            </div>
 
-                </div>
+            <div class="brand-content">
+                <span>INDIA • FASHION</span>
 
-            </article>
+                <h3>AJIO</h3>
 
+                <p>
+                    Fashion, footwear and lifestyle shopping.
+                </p>
 
-            <!-- SAPPHIRE -->
+                <a href="https://www.ajio.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-            <article class="brand-card">
+        </article>
 
-                <div class="brand-logo sapphire">
-                    SAPPHIRE
-                </div>
 
-                <div class="brand-content">
+        <article class="brand-card"
+            data-country="india"
+            data-category="fashion">
 
-                    <span class="brand-category">
-                        PAKISTAN • FASHION
-                    </span>
+            <div class="brand-logo india-brand">
+                MYNTRA
+            </div>
 
-                    <h3>Sapphire</h3>
+            <div class="brand-content">
+                <span>INDIA • FASHION</span>
 
-                    <p>
-                        Pakistani clothing, accessories
-                        and lifestyle fashion.
-                    </p>
+                <h3>Myntra</h3>
 
-                    <a href="https://pk.sapphireonline.pk/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
+                <p>
+                    Popular Indian fashion and lifestyle platform.
+                </p>
 
-                </div>
+                <a href="https://www.myntra.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-            </article>
+        </article>
 
 
-            <!-- GUL AHMED -->
+        <!-- INTERNATIONAL -->
 
-            <article class="brand-card">
+        <article class="brand-card"
+            data-country="international"
+            data-category="sports">
 
-                <div class="brand-logo gul-ahmed">
-                    GUL AHMED
-                </div>
+            <div class="brand-logo nike">
+                NIKE
+            </div>
 
-                <div class="brand-content">
+            <div class="brand-content">
+                <span>INTERNATIONAL • SPORTS</span>
 
-                    <span class="brand-category">
-                        PAKISTAN • TEXTILES
-                    </span>
+                <h3>Nike</h3>
 
-                    <h3>Gul Ahmed</h3>
+                <p>
+                    Athletic footwear, clothing and lifestyle.
+                </p>
 
-                    <p>
-                        Clothing, fabrics and lifestyle
-                        collections from Pakistan.
-                    </p>
+                <a href="https://www.nike.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-                    <a href="https://www.gulahmedshop.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
+        </article>
 
-                </div>
 
-            </article>
+        <article class="brand-card"
+            data-country="international"
+            data-category="sports">
 
+            <div class="brand-logo adidas">
+                ADIDAS
+            </div>
 
-            <!-- OUTFITTERS -->
+            <div class="brand-content">
+                <span>INTERNATIONAL • SPORTS</span>
 
-            <article class="brand-card">
+                <h3>Adidas</h3>
 
-                <div class="brand-logo outfitters">
-                    OUTFITTERS
-                </div>
+                <p>
+                    Sportswear, sneakers and street fashion.
+                </p>
 
-                <div class="brand-content">
+                <a href="https://www.adidas.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-                    <span class="brand-category">
-                        PAKISTAN • CASUAL
-                    </span>
+        </article>
 
-                    <h3>Outfitters</h3>
 
-                    <p>
-                        Contemporary casual fashion for
-                        modern lifestyles.
-                    </p>
+        <article class="brand-card"
+            data-country="international"
+            data-category="luxury">
 
-                    <a href="https://outfitters.com.pk/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
+            <div class="brand-logo gucci">
+                GUCCI
+            </div>
 
-                </div>
+            <div class="brand-content">
+                <span>INTERNATIONAL • LUXURY</span>
 
-            </article>
+                <h3>Gucci</h3>
 
+                <p>
+                    Italian luxury fashion and accessories.
+                </p>
 
-            <!-- BREAKOUT -->
+                <a href="https://www.gucci.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-            <article class="brand-card">
+        </article>
 
-                <div class="brand-logo breakout">
-                    BREAKOUT
-                </div>
 
-                <div class="brand-content">
+        <article class="brand-card"
+            data-country="international"
+            data-category="luxury">
 
-                    <span class="brand-category">
-                        PAKISTAN • FASHION
-                    </span>
+            <div class="brand-logo prada">
+                PRADA
+            </div>
 
-                    <h3>Breakout</h3>
+            <div class="brand-content">
+                <span>INTERNATIONAL • LUXURY</span>
 
-                    <p>
-                        Modern casual clothing and
-                        fashion collections.
-                    </p>
+                <h3>Prada</h3>
 
-                    <a href="https://breakout.com.pk/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
+                <p>
+                    Luxury fashion, bags, shoes and accessories.
+                </p>
 
-                </div>
+                <a href="https://www.prada.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-            </article>
+        </article>
 
 
-            <!-- LIMELIGHT -->
+        <article class="brand-card"
+            data-country="international"
+            data-category="footwear">
 
-            <article class="brand-card">
+            <div class="brand-logo newbalance">
+                NB
+            </div>
 
-                <div class="brand-logo limelight">
-                    LIMELIGHT
-                </div>
+            <div class="brand-content">
+                <span>INTERNATIONAL • FOOTWEAR</span>
 
-                <div class="brand-content">
+                <h3>New Balance</h3>
 
-                    <span class="brand-category">
-                        PAKISTAN • WOMEN
-                    </span>
+                <p>
+                    Performance shoes and sportswear.
+                </p>
 
-                    <h3>Limelight</h3>
+                <a href="https://www.newbalance.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-                    <p>
-                        Women's clothing, accessories
-                        and lifestyle fashion.
-                    </p>
+        </article>
 
-                    <a href="https://www.limelight.pk/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
 
-                </div>
+        <article class="brand-card"
+            data-country="international"
+            data-category="footwear">
 
-            </article>
+            <div class="brand-logo converse">
+                CONVERSE
+            </div>
 
+            <div class="brand-content">
+                <span>INTERNATIONAL • FOOTWEAR</span>
 
-            <!-- NISHAT LINEN -->
+                <h3>Converse</h3>
 
-            <article class="brand-card">
+                <p>
+                    Iconic sneakers and casual footwear.
+                </p>
 
-                <div class="brand-logo nishat">
-                    NISHAT LINEN
-                </div>
+                <a href="https://www.converse.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-                <div class="brand-content">
+        </article>
 
-                    <span class="brand-category">
-                        PAKISTAN • FASHION
-                    </span>
 
-                    <h3>Nishat Linen</h3>
+        <article class="brand-card"
+            data-country="international"
+            data-category="fashion">
 
-                    <p>
-                        Pakistani clothing, prints and
-                        seasonal collections.
-                    </p>
+            <div class="brand-logo zara">
+                ZARA
+            </div>
 
-                    <a href="https://nishatlinen.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
+            <div class="brand-content">
+                <span>INTERNATIONAL • FASHION</span>
 
-                </div>
+                <h3>Zara</h3>
 
-            </article>
+                <p>
+                    Contemporary clothing and accessories.
+                </p>
 
+                <a href="https://www.zara.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-            <!-- BONANZA -->
+        </article>
 
-            <article class="brand-card">
 
-                <div class="brand-logo bonanza">
-                    BONANZA
-                </div>
+        <article class="brand-card"
+            data-country="international"
+            data-category="fashion">
 
-                <div class="brand-content">
+            <div class="brand-logo hm">
+                H&M
+            </div>
 
-                    <span class="brand-category">
-                        PAKISTAN • FASHION
-                    </span>
+            <div class="brand-content">
+                <span>INTERNATIONAL • FASHION</span>
 
-                    <h3>Bonanza Satrangi</h3>
+                <h3>H&M</h3>
 
-                    <p>
-                        Fashion and clothing collections
-                        for modern Pakistan.
-                    </p>
+                <p>
+                    Trend-focused everyday fashion.
+                </p>
 
-                    <a href="https://bonanzasatrangi.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
+                <a href="https://www2.hm.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-link">
+                    Visit Store →
+                </a>
+            </div>
 
-                </div>
+        </article>
 
-            </article>
 
+    </div>
 
-            <!-- J. -->
 
-            <article class="brand-card">
+    <div id="noResults" class="no-results">
+        No brands found.
+    </div>
 
-                <div class="brand-logo junaid">
-                    J.
-                </div>
+</section>
 
-                <div class="brand-content">
 
-                    <span class="brand-category">
-                        PAKISTAN • FASHION
-                    </span>
+<!-- CATEGORIES -->
 
-                    <h3>J.</h3>
+<section class="categories" id="categories">
 
-                    <p>
-                        Pakistani fashion, fragrances
-                        and lifestyle products.
-                    </p>
+    <div class="section-heading">
+        <p class="eyebrow">FIND YOUR STYLE</p>
 
-                    <a href="https://www.junaidjamshed.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
+        <h2>
+            Shop by <span>Category</span>
+        </h2>
+    </div>
 
-                </div>
+    <div class="category-grid">
 
-            </article>
+        <a href="#brands" class="category-card">
+            <strong>01</strong>
+            <h3>Fashion</h3>
+            <p>Explore fashion brands →</p>
+        </a>
 
+        <a href="#brands" class="category-card">
+            <strong>02</strong>
+            <h3>Sports</h3>
+            <p>Explore sports brands →</p>
+        </a>
 
-            <!-- DARAZ -->
+        <a href="#brands" class="category-card">
+            <strong>03</strong>
+            <h3>Footwear</h3>
+            <p>Find shoes & sneakers →</p>
+        </a>
 
-            <article class="brand-card">
+        <a href="#brands" class="category-card">
+            <strong>04</strong>
+            <h3>Luxury</h3>
+            <p>Discover luxury brands →</p>
+        </a>
 
-                <div class="brand-logo daraz">
-                    DARAZ
-                </div>
+    </div>
 
-                <div class="brand-content">
+</section>
 
-                    <span class="brand-category">
-                        PAKISTAN • ONLINE
-                    </span>
 
-                    <h3>Daraz</h3>
+<!-- ABOUT -->
 
-                    <p>
-                        Online shopping for fashion,
-                        shoes and accessories.
-                    </p>
+<section class="about" id="about">
 
-                    <a href="https://www.daraz.pk/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
+    <p class="eyebrow">ABOUT STYLEGATE</p>
 
-                </div>
+    <h2>
+        One Gateway.
+        <span>Many Styles.</span>
+    </h2>
 
-            </article>
+    <p>
+        StyleGate helps shoppers discover fashion brands
+        from Pakistan, India and around the world.
+        Find a brand, explore its store and discover your style.
+    </p>
 
+    <a href="#brands" class="main-btn dark">
+        Explore Brands →
+    </a>
 
-            <!-- ================= INTERNATIONAL BRANDS ================= -->
+</section>
 
 
-            <!-- NIKE -->
+<!-- FOOTER -->
 
-            <article class="brand-card">
+<footer>
 
-                <div class="brand-logo nike">
-                    NIKE
-                </div>
+    <div class="footer-inner">
 
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • SPORTS
-                    </span>
-
-                    <h3>Nike</h3>
-
-                    <p>
-                        Athletic footwear, clothing and
-                        lifestyle products.
-                    </p>
-
-                    <a href="https://www.nike.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- ADIDAS -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo adidas">
-                    ADIDAS
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • SPORTS
-                    </span>
-
-                    <h3>Adidas</h3>
-
-                    <p>
-                        Sportswear, sneakers and modern
-                        street fashion.
-                    </p>
-
-                    <a href="https://www.adidas.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- ZARA -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo zara">
-                    ZARA
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • FASHION
-                    </span>
-
-                    <h3>Zara</h3>
-
-                    <p>
-                        Contemporary clothing, accessories
-                        and fashion.
-                    </p>
-
-                    <a href="https://www.zara.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- H&M -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo hm">
-                    H&M
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • FASHION
-                    </span>
-
-                    <h3>H&M</h3>
-
-                    <p>
-                        Trend-focused clothing and
-                        everyday fashion.
-                    </p>
-
-                    <a href="https://www2.hm.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- GUCCI -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo gucci">
-                    GUCCI
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        LUXURY • ITALY
-                    </span>
-
-                    <h3>Gucci</h3>
-
-                    <p>
-                        Italian luxury fashion, accessories
-                        and leather goods.
-                    </p>
-
-                    <a href="https://www.gucci.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRADA -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo prada">
-                    PRADA
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        LUXURY • ITALY
-                    </span>
-
-                    <h3>Prada</h3>
-
-                    <p>
-                        Italian luxury fashion, bags,
-                        shoes and accessories.
-                    </p>
-
-                    <a href="https://www.prada.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- LEVI'S -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo levis">
-                    LEVI'S
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • DENIM
-                    </span>
-
-                    <h3>Levi's</h3>
-
-                    <p>
-                        Iconic denim, jeans and
-                        casual clothing.
-                    </p>
-
-                    <a href="https://www.levi.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PUMA -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo puma">
-                    PUMA
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • SPORTS
-                    </span>
-
-                    <h3>Puma</h3>
-
-                    <p>
-                        Sports shoes, clothing and
-                        lifestyle fashion.
-                    </p>
-
-                    <a href="https://us.puma.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- NEW BALANCE -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo newbalance">
-                    NB
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • FOOTWEAR
-                    </span>
-
-                    <h3>New Balance</h3>
-
-                    <p>
-                        Performance shoes and
-                        contemporary sportswear.
-                    </p>
-
-                    <a href="https://www.newbalance.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- ASICS -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo asics">
-                    ASICS
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • SPORTS
-                    </span>
-
-                    <h3>ASICS</h3>
-
-                    <p>
-                        Running shoes, sportswear and
-                        performance gear.
-                    </p>
-
-                    <a href="https://www.asics.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- SKECHERS -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo skechers">
-                    SKECHERS
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • FOOTWEAR
-                    </span>
-
-                    <h3>Skechers</h3>
-
-                    <p>
-                        Comfortable footwear for
-                        everyday lifestyle.
-                    </p>
-
-                    <a href="https://www.skechers.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- CONVERSE -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo converse">
-                    CONVERSE
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • FOOTWEAR
-                    </span>
-
-                    <h3>Converse</h3>
-
-                    <p>
-                        Iconic sneakers and casual
-                        lifestyle footwear.
-                    </p>
-
-                    <a href="https://www.converse.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- VANS -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo vans">
-                    VANS
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • STREETWEAR
-                    </span>
-
-                    <h3>Vans</h3>
-
-                    <p>
-                        Skate-inspired shoes, clothing
-                        and streetwear.
-                    </p>
-
-                    <a href="https://www.vans.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- UNDER ARMOUR -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo underarmour">
-                    UNDER ARMOUR
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • SPORTS
-                    </span>
-
-                    <h3>Under Armour</h3>
-
-                    <p>
-                        Performance sportswear, footwear
-                        and athletic gear.
-                    </p>
-
-                    <a href="https://www.underarmour.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- CALVIN KLEIN -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo calvinklein">
-                    CALVIN KLEIN
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • FASHION
-                    </span>
-
-                    <h3>Calvin Klein</h3>
-
-                    <p>
-                        Modern fashion, denim, underwear
-                        and lifestyle products.
-                    </p>
-
-                    <a href="https://www.calvinklein.us/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- TOMMY HILFIGER -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo tommy">
-                    TOMMY HILFIGER
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • FASHION
-                    </span>
-
-                    <h3>Tommy Hilfiger</h3>
-
-                    <p>
-                        Classic American-inspired fashion
-                        and lifestyle.
-                    </p>
-
-                    <a href="https://usa.tommy.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- BERSHKA -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo bershka">
-                    BERSHKA
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • FASHION
-                    </span>
-
-                    <h3>Bershka</h3>
-
-                    <p>
-                        Youth-focused fashion, streetwear
-                        and accessories.
-                    </p>
-
-                    <a href="https://www.bershka.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PULL&BEAR -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo pullbear">
-                    PULL&BEAR
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • CASUAL
-                    </span>
-
-                    <h3>Pull&Bear</h3>
-
-                    <p>
-                        Casual fashion inspired by
-                        youth culture.
-                    </p>
-
-                    <a href="https://www.pullandbear.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- MANGO -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo mango">
-                    MANGO
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • FASHION
-                    </span>
-
-                    <h3>Mango</h3>
-
-                    <p>
-                        Contemporary fashion for
-                        women and men.
-                    </p>
-
-                    <a href="https://shop.mango.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- UNIQLO -->
-
-            <article class="brand-card">
-
-                <div class="brand-logo uniqlo">
-                    UNIQLO
-                </div>
-
-                <div class="brand-content">
-
-                    <span class="brand-category">
-                        INTERNATIONAL • FASHION
-                    </span>
-
-                    <h3>Uniqlo</h3>
-
-                    <p>
-                        Simple, functional and everyday
-                        Japanese fashion.
-                    </p>
-
-                    <a href="https://www.uniqlo.com/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="visit-link">
-                        Visit Website →
-                    </a>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-
-        <!-- NO SEARCH RESULTS -->
-
-        <div id="noResults" class="no-results">
-            No brand found. Try another search.
-        </div>
-
-    </section>
-
-
-    <!-- ================= CATEGORIES ================= -->
-
-    <section class="categories-section" id="categories">
-
-        <div class="category-heading">
-
-            <p class="eyebrow">
-                FIND YOUR STYLE
-            </p>
-
-            <h2>
-                Shop by <span>Category</span>
-            </h2>
-
-        </div>
-
-
-        <div class="category-grid">
-
-
-            <a href="#brands" class="category-card men">
-
-                <div>
-
-                    <small>01</small>
-
-                    <h3>
-                        Men's Fashion
-                    </h3>
-
-                    <p>
-                        Explore men's brands →
-                    </p>
-
-                </div>
-
+        <div>
+            <a href="#home" class="logo">
+                STYLE<span>GATE</span>
             </a>
-
-
-            <a href="#brands" class="category-card women">
-
-                <div>
-
-                    <small>02</small>
-
-                    <h3>
-                        Women's Fashion
-                    </h3>
-
-                    <p>
-                        Explore women's brands →
-                    </p>
-
-                </div>
-
-            </a>
-
-
-            <a href="#brands" class="category-card shoes">
-
-                <div>
-
-                    <small>03</small>
-
-                    <h3>
-                        Shoes & Sneakers
-                    </h3>
-
-                    <p>
-                        Find your next pair →
-                    </p>
-
-                </div>
-
-            </a>
-
-
-            <a href="#brands" class="category-card luxury">
-
-                <div>
-
-                    <small>04</small>
-
-                    <h3>
-                        Luxury Fashion
-                    </h3>
-
-                    <p>
-                        Discover luxury brands →
-                    </p>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section class="about-section" id="about">
-
-        <div class="about-content">
-
-            <p class="eyebrow">
-                ABOUT STYLEHUB
-            </p>
-
-            <h2>
-                Fashion.
-                <span>Simple.</span>
-                Discoverable.
-            </h2>
 
             <p>
-                StyleHub is a fashion discovery platform concept
-                designed to help people discover popular fashion
-                brands and quickly visit their online stores.
+                Discover fashion. Find your style.
             </p>
-
-            <a href="#brands" class="dark-btn">
-                Explore Brands →
-            </a>
-
         </div>
 
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <div class="footer-container">
-
-            <div>
-
-                <a href="#home" class="logo footer-logo">
-                    STYLE<span>HUB</span>
-                </a>
-
-                <p class="footer-text">
-                    Discover fashion. Find your style.
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <a href="#home">Home</a>
-
-                <a href="#brands">Brands</a>
-
-                <a href="#categories">
-                    Categories
-                </a>
-
-                <a href="#about">
-                    About
-                </a>
-
-            </div>
-
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#brands">Brands</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
         </div>
 
+    </div>
 
-        <div class="copyright">
+    <div class="copyright">
+        © 2026 StyleGate. All rights reserved.
+    </div>
 
-            © 2026 StyleHub. Student prototype.
-
-        </div>
-
-    </footer>
+</footer>
 
 
-    <!-- ================= JAVASCRIPT ================= -->
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
+```
 
 </body>
-
 </html>
