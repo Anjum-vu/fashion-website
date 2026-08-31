@@ -1,30 +1,35 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="StyleGate - Discover fashion brands from around the world. Explore fashion, footwear, sportswear and luxury brands in one place.">
+```
+<meta name="description"
+    content="Styleora is a fashion discovery platform helping you explore fashion, footwear, sportswear and luxury brands from around the world.">
 
-    <title>StyleGate | Discover Global Fashion</title>
+<meta name="keywords"
+    content="fashion brands, international fashion, clothing, shoes, sportswear, luxury fashion">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Styleora | Discover Fashion Brands</title>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-        rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet" href="style.css">
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
 
 <body>
 
-
+```
 <!-- ================= NAVBAR ================= -->
 
 <header class="navbar">
@@ -32,17 +37,14 @@
     <div class="nav-container">
 
         <a href="#home" class="logo">
-            STYLE<span>GATE</span>
+            STYLE<span>ORA</span>
         </a>
 
         <nav class="nav-links" id="navLinks">
-
             <a href="#home">Home</a>
-            <a href="#featured">Featured</a>
             <a href="#brands">Brands</a>
             <a href="#categories">Categories</a>
             <a href="#about">About</a>
-
         </nav>
 
         <button class="menu-btn" id="menuBtn" aria-label="Open menu">
@@ -56,969 +58,617 @@
 
 <!-- ================= HERO ================= -->
 
-<section class="hero" id="home">
+<main>
 
-    <div class="hero-content">
+    <section class="hero" id="home">
 
-        <p class="eyebrow">
-            YOUR GLOBAL FASHION GATEWAY
-        </p>
+        <div class="hero-content">
 
-        <h1>
-            Discover Your
-            <span>Perfect Style.</span>
-        </h1>
+            <p class="eyebrow">
+                YOUR FASHION GATEWAY
+            </p>
 
-        <p class="hero-text">
-            Explore fashion, footwear, sportswear and luxury
-            brands from around the world — all in one place.
-        </p>
+            <h1>
+                Discover Your
+                <span>Perfect Style.</span>
+            </h1>
 
-        <div class="hero-buttons">
+            <p class="hero-text">
+                Explore fashion, footwear, sportswear and luxury
+                brands from around the world — all in one place.
+            </p>
 
             <a href="#brands" class="main-btn">
                 Explore Brands →
             </a>
 
-            <a href="#categories" class="secondary-btn">
-                Browse Categories
+        </div>
+
+        <div class="hero-image">
+
+            <div class="hero-badge">
+                <strong>14+</strong>
+                <small>Featured Brands</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BRANDS ================= -->
+
+    <section class="brands-section" id="brands">
+
+        <div class="section-header">
+
+            <div>
+                <p class="eyebrow">EXPLORE</p>
+
+                <h2>
+                    Fashion <span>Brands</span>
+                </h2>
+            </div>
+
+            <p>
+                Discover popular brands and visit their
+                official online stores.
+            </p>
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <div class="filters">
+
+            <button class="filter-btn active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="fashion">
+                Fashion
+            </button>
+
+            <button class="filter-btn" data-filter="sports">
+                Sports
+            </button>
+
+            <button class="filter-btn" data-filter="footwear">
+                Footwear
+            </button>
+
+            <button class="filter-btn" data-filter="luxury">
+                Luxury
+            </button>
+
+        </div>
+
+
+        <!-- BRAND GRID -->
+
+        <div class="brand-grid" id="brandGrid">
+
+
+            <!-- KHAADI -->
+
+            <article class="brand-card" data-category="fashion">
+
+                <div class="brand-logo khaadi">
+                    KHAADI
+                </div>
+
+                <div class="brand-content">
+
+                    <small>FASHION</small>
+
+                    <h3>Khaadi</h3>
+
+                    <p>
+                        Pakistani fashion and lifestyle brand.
+                    </p>
+
+                    <a href="https://www.khaadi.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SAPPHIRE -->
+
+            <article class="brand-card" data-category="fashion">
+
+                <div class="brand-logo sapphire">
+                    SAPPHIRE
+                </div>
+
+                <div class="brand-content">
+
+                    <small>FASHION</small>
+
+                    <h3>Sapphire</h3>
+
+                    <p>
+                        Clothing, accessories and lifestyle fashion.
+                    </p>
+
+                    <a href="https://pk.sapphireonline.pk/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- OUTFITTERS -->
+
+            <article class="brand-card" data-category="fashion">
+
+                <div class="brand-logo outfitters">
+                    OUTFITTERS
+                </div>
+
+                <div class="brand-content">
+
+                    <small>FASHION</small>
+
+                    <h3>Outfitters</h3>
+
+                    <p>
+                        Modern casual fashion for everyday style.
+                    </p>
+
+                    <a href="https://outfitters.com.pk/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ZARA -->
+
+            <article class="brand-card" data-category="fashion">
+
+                <div class="brand-logo zara">
+                    ZARA
+                </div>
+
+                <div class="brand-content">
+
+                    <small>FASHION</small>
+
+                    <h3>Zara</h3>
+
+                    <p>
+                        Contemporary clothing and accessories.
+                    </p>
+
+                    <a href="https://www.zara.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- H&M -->
+
+            <article class="brand-card" data-category="fashion">
+
+                <div class="brand-logo hm">
+                    H&M
+                </div>
+
+                <div class="brand-content">
+
+                    <small>FASHION</small>
+
+                    <h3>H&M</h3>
+
+                    <p>
+                        Trend-focused everyday fashion.
+                    </p>
+
+                    <a href="https://www2.hm.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- NIKE -->
+
+            <article class="brand-card" data-category="sports">
+
+                <div class="brand-logo nike">
+                    NIKE
+                </div>
+
+                <div class="brand-content">
+
+                    <small>SPORTS</small>
+
+                    <h3>Nike</h3>
+
+                    <p>
+                        Athletic footwear, clothing and lifestyle.
+                    </p>
+
+                    <a href="https://www.nike.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ADIDAS -->
+
+            <article class="brand-card" data-category="sports">
+
+                <div class="brand-logo adidas">
+                    ADIDAS
+                </div>
+
+                <div class="brand-content">
+
+                    <small>SPORTS</small>
+
+                    <h3>Adidas</h3>
+
+                    <p>
+                        Sportswear, sneakers and street fashion.
+                    </p>
+
+                    <a href="https://www.adidas.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PUMA -->
+
+            <article class="brand-card" data-category="sports">
+
+                <div class="brand-logo puma">
+                    PUMA
+                </div>
+
+                <div class="brand-content">
+
+                    <small>SPORTS</small>
+
+                    <h3>Puma</h3>
+
+                    <p>
+                        Sportswear, footwear and lifestyle products.
+                    </p>
+
+                    <a href="https://www.puma.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- NEW BALANCE -->
+
+            <article class="brand-card" data-category="footwear">
+
+                <div class="brand-logo newbalance">
+                    NB
+                </div>
+
+                <div class="brand-content">
+
+                    <small>FOOTWEAR</small>
+
+                    <h3>New Balance</h3>
+
+                    <p>
+                        Performance shoes and sportswear.
+                    </p>
+
+                    <a href="https://www.newbalance.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- CONVERSE -->
+
+            <article class="brand-card" data-category="footwear">
+
+                <div class="brand-logo converse">
+                    CONVERSE
+                </div>
+
+                <div class="brand-content">
+
+                    <small>FOOTWEAR</small>
+
+                    <h3>Converse</h3>
+
+                    <p>
+                        Iconic sneakers and casual footwear.
+                    </p>
+
+                    <a href="https://www.converse.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- GUCCI -->
+
+            <article class="brand-card" data-category="luxury">
+
+                <div class="brand-logo gucci">
+                    GUCCI
+                </div>
+
+                <div class="brand-content">
+
+                    <small>LUXURY</small>
+
+                    <h3>Gucci</h3>
+
+                    <p>
+                        Italian luxury fashion and accessories.
+                    </p>
+
+                    <a href="https://www.gucci.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRADA -->
+
+            <article class="brand-card" data-category="luxury">
+
+                <div class="brand-logo prada">
+                    PRADA
+                </div>
+
+                <div class="brand-content">
+
+                    <small>LUXURY</small>
+
+                    <h3>Prada</h3>
+
+                    <p>
+                        Luxury fashion, bags, shoes and accessories.
+                    </p>
+
+                    <a href="https://www.prada.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SHEIN -->
+
+            <article class="brand-card" data-category="fashion">
+
+                <div class="brand-logo shein">
+                    SHEIN
+                </div>
+
+                <div class="brand-content">
+
+                    <small>FASHION</small>
+
+                    <h3>SHEIN</h3>
+
+                    <p>
+                        Affordable fashion, accessories and lifestyle.
+                    </p>
+
+                    <a href="https://www.shein.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="visit-btn">
+                        Visit Brand →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <div id="noResults" class="no-results">
+            No brands found in this category.
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="categories" id="categories">
+
+        <div class="category-heading">
+
+            <p class="eyebrow">
+                FIND YOUR STYLE
+            </p>
+
+            <h2>
+                Shop by <span>Category</span>
+            </h2>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <a href="#brands"
+                class="category-card fashion-category"
+                data-category-link="fashion">
+
+                <span>01</span>
+                <h3>Fashion</h3>
+                <p>Explore fashion brands →</p>
+
+            </a>
+
+
+            <a href="#brands"
+                class="category-card sports-category"
+                data-category-link="sports">
+
+                <span>02</span>
+                <h3>Sports</h3>
+                <p>Explore sports brands →</p>
+
+            </a>
+
+
+            <a href="#brands"
+                class="category-card shoes-category"
+                data-category-link="footwear">
+
+                <span>03</span>
+                <h3>Footwear</h3>
+                <p>Find shoes & sneakers →</p>
+
+            </a>
+
+
+            <a href="#brands"
+                class="category-card luxury-category"
+                data-category-link="luxury">
+
+                <span>04</span>
+                <h3>Luxury</h3>
+                <p>Discover luxury brands →</p>
+
             </a>
 
         </div>
 
-        <div class="hero-stats">
-
-            <div>
-                <strong id="heroBrandCount">0+</strong>
-                <small>Brands</small>
-            </div>
-
-            <div>
-                <strong>4</strong>
-                <small>Categories</small>
-            </div>
-
-            <div>
-                <strong>Global</strong>
-                <small>Fashion</small>
-            </div>
-
-        </div>
-
-    </div>
+    </section>
 
 
-    <div class="hero-image">
+    <!-- ================= ABOUT ================= -->
 
-        <div class="hero-overlay"></div>
-
-        <div class="hero-badge">
-
-            <span>STYLEGATE</span>
-            <strong>Global Fashion</strong>
-            <small>Discover • Explore • Shop</small>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FEATURED ================= -->
-
-<section class="featured-section" id="featured">
-
-    <div class="section-header">
-
-        <div>
-
-            <p class="eyebrow">EDITOR'S PICKS</p>
-
-            <h2>
-                Featured <span>Brands</span>
-            </h2>
-
-        </div>
-
-        <p>
-            Discover some of the world's most popular
-            fashion and lifestyle brands.
-        </p>
-
-    </div>
-
-
-    <div class="featured-grid">
-
-
-        <!-- SHEIN -->
-
-        <article class="featured-card shein-featured">
-
-            <div class="featured-info">
-
-                <span>POPULAR FASHION</span>
-
-                <h3>SHEIN</h3>
-
-                <p>
-                    Trend-focused fashion and accessories
-                    at affordable prices.
-                </p>
-
-                <!-- Replace href later with affiliate link -->
-
-                <a href="https://www.shein.com/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Explore SHEIN →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- ASOS -->
-
-        <article class="featured-card asos-featured">
-
-            <div class="featured-info">
-
-                <span>GLOBAL FASHION</span>
-
-                <h3>ASOS</h3>
-
-                <p>
-                    Fashion, beauty and lifestyle collections
-                    for modern shoppers.
-                </p>
-
-                <a href="https://www.asos.com/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Explore ASOS →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- NIKE -->
-
-        <article class="featured-card nike-featured">
-
-            <div class="featured-info">
-
-                <span>SPORTSWEAR</span>
-
-                <h3>NIKE</h3>
-
-                <p>
-                    Sneakers, sportswear and performance
-                    lifestyle products.
-                </p>
-
-                <a href="https://www.nike.com/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Explore Nike →
-                </a>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-<!-- ================= CATEGORIES ================= -->
-
-<section class="categories" id="categories">
-
-    <div class="category-heading">
+    <section class="about" id="about">
 
         <p class="eyebrow">
-            FIND YOUR STYLE
+            ABOUT STYLEORA
         </p>
 
         <h2>
-            Shop by <span>Category</span>
+            One Gateway.
+            <span>Many Styles.</span>
         </h2>
 
         <p>
-            Start exploring fashion based on what
-            you're looking for.
+            Styleora is a student-built fashion discovery project
+            designed to help people explore fashion brands from
+            around the world in one simple place.
         </p>
 
-    </div>
-
-
-    <div class="category-grid">
-
-
-        <a href="#brands"
-           class="category-card fashion"
-           data-category-link="fashion">
-
-            <span>01</span>
-
-            <h3>Fashion</h3>
-
-            <p>
-                Clothing & lifestyle →
-            </p>
-
+        <a href="#brands" class="main-btn">
+            Explore Brands →
         </a>
 
-
-        <a href="#brands"
-           class="category-card sports"
-           data-category-link="sports">
-
-            <span>02</span>
-
-            <h3>Sportswear</h3>
-
-            <p>
-                Sports & activewear →
-            </p>
-
-        </a>
+    </section>
 
 
-        <a href="#brands"
-           class="category-card shoes"
-           data-category-link="footwear">
+    <!-- ================= AFFILIATE DISCLOSURE ================= -->
 
-            <span>03</span>
+    <section class="disclosure">
 
-            <h3>Footwear</h3>
+        <div class="disclosure-content">
+
+            <h3>Affiliate Disclosure</h3>
 
             <p>
-                Shoes & sneakers →
+                Some links on Styleora may become affiliate links in
+                the future. If you purchase through an affiliate link,
+                Styleora may earn a small commission at no additional
+                cost to you.
             </p>
-
-        </a>
-
-
-        <a href="#brands"
-           class="category-card luxury"
-           data-category-link="luxury">
-
-            <span>04</span>
-
-            <h3>Luxury</h3>
 
             <p>
-                Premium fashion →
-            </p>
-
-        </a>
-
-
-    </div>
-
-</section>
-
-
-<!-- ================= BRANDS ================= -->
-
-<section class="brands-section" id="brands">
-
-    <div class="section-header">
-
-        <div>
-
-            <p class="eyebrow">
-                EXPLORE
-            </p>
-
-            <h2>
-                Fashion <span>Brands</span>
-            </h2>
-
-        </div>
-
-        <p>
-            Search and discover fashion brands
-            from around the world.
-        </p>
-
-    </div>
-
-
-    <!-- SEARCH -->
-
-    <div class="search-box">
-
-        <span>⌕</span>
-
-        <input
-            type="text"
-            id="brandSearch"
-            placeholder="Search brands..."
-            autocomplete="off">
-
-    </div>
-
-
-    <!-- FILTERS -->
-
-    <div class="filters">
-
-        <button class="filter-btn active"
-                data-filter="all">
-            All
-        </button>
-
-        <button class="filter-btn"
-                data-filter="fashion">
-            Fashion
-        </button>
-
-        <button class="filter-btn"
-                data-filter="sports">
-            Sports
-        </button>
-
-        <button class="filter-btn"
-                data-filter="footwear">
-            Footwear
-        </button>
-
-        <button class="filter-btn"
-                data-filter="luxury">
-            Luxury
-        </button>
-
-        <button class="filter-btn"
-                data-filter="affordable">
-            Affordable
-        </button>
-
-    </div>
-
-
-    <!-- BRAND GRID -->
-
-    <div class="brand-grid" id="brandGrid">
-
-
-        <!-- SHEIN -->
-
-        <article class="brand-card"
-                 data-category="fashion affordable">
-
-            <div class="brand-logo shein">
-                SHEIN
-            </div>
-
-            <div class="brand-content">
-
-                <small>GLOBAL • FASHION</small>
-
-                <h3>SHEIN</h3>
-
-                <p>
-                    Trend-focused fashion, accessories
-                    and lifestyle products.
-                </p>
-
-                <a href="https://www.shein.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- ASOS -->
-
-        <article class="brand-card"
-                 data-category="fashion affordable">
-
-            <div class="brand-logo asos">
-                ASOS
-            </div>
-
-            <div class="brand-content">
-
-                <small>GLOBAL • FASHION</small>
-
-                <h3>ASOS</h3>
-
-                <p>
-                    Fashion, beauty and lifestyle
-                    for modern shoppers.
-                </p>
-
-                <a href="https://www.asos.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- ZARA -->
-
-        <article class="brand-card"
-                 data-category="fashion">
-
-            <div class="brand-logo zara">
-                ZARA
-            </div>
-
-            <div class="brand-content">
-
-                <small>GLOBAL • FASHION</small>
-
-                <h3>Zara</h3>
-
-                <p>
-                    Contemporary clothing and
-                    accessories.
-                </p>
-
-                <a href="https://www.zara.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- H&M -->
-
-        <article class="brand-card"
-                 data-category="fashion affordable">
-
-            <div class="brand-logo hm">
-                H&M
-            </div>
-
-            <div class="brand-content">
-
-                <small>GLOBAL • FASHION</small>
-
-                <h3>H&M</h3>
-
-                <p>
-                    Trend-focused everyday fashion
-                    and accessories.
-                </p>
-
-                <a href="https://www2.hm.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- NIKE -->
-
-        <article class="brand-card"
-                 data-category="sports footwear">
-
-            <div class="brand-logo nike">
-                NIKE
-            </div>
-
-            <div class="brand-content">
-
-                <small>GLOBAL • SPORTS</small>
-
-                <h3>Nike</h3>
-
-                <p>
-                    Athletic footwear, sportswear
-                    and lifestyle.
-                </p>
-
-                <a href="https://www.nike.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- ADIDAS -->
-
-        <article class="brand-card"
-                 data-category="sports footwear">
-
-            <div class="brand-logo adidas">
-                ADIDAS
-            </div>
-
-            <div class="brand-content">
-
-                <small>GLOBAL • SPORTS</small>
-
-                <h3>Adidas</h3>
-
-                <p>
-                    Sportswear, sneakers and
-                    street fashion.
-                </p>
-
-                <a href="https://www.adidas.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PUMA -->
-
-        <article class="brand-card"
-                 data-category="sports footwear">
-
-            <div class="brand-logo puma">
-                PUMA
-            </div>
-
-            <div class="brand-content">
-
-                <small>GLOBAL • SPORTS</small>
-
-                <h3>Puma</h3>
-
-                <p>
-                    Sportswear, sneakers and
-                    performance fashion.
-                </p>
-
-                <a href="https://us.puma.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- NEW BALANCE -->
-
-        <article class="brand-card"
-                 data-category="sports footwear">
-
-            <div class="brand-logo newbalance">
-                NB
-            </div>
-
-            <div class="brand-content">
-
-                <small>GLOBAL • FOOTWEAR</small>
-
-                <h3>New Balance</h3>
-
-                <p>
-                    Performance footwear and
-                    sportswear.
-                </p>
-
-                <a href="https://www.newbalance.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- ZALANDO -->
-
-        <article class="brand-card"
-                 data-category="fashion footwear">
-
-            <div class="brand-logo zalando">
-                ZALANDO
-            </div>
-
-            <div class="brand-content">
-
-                <small>EUROPE • FASHION</small>
-
-                <h3>Zalando</h3>
-
-                <p>
-                    Fashion, shoes and lifestyle
-                    marketplace.
-                </p>
-
-                <a href="https://www.zalando.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- EBAY -->
-
-        <article class="brand-card"
-                 data-category="fashion footwear affordable">
-
-            <div class="brand-logo ebay">
-                eBay
-            </div>
-
-            <div class="brand-content">
-
-                <small>GLOBAL • MARKETPLACE</small>
-
-                <h3>eBay</h3>
-
-                <p>
-                    Fashion, footwear, accessories
-                    and more.
-                </p>
-
-                <a href="https://www.ebay.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- ETSY -->
-
-        <article class="brand-card"
-                 data-category="fashion affordable">
-
-            <div class="brand-logo etsy">
-                ETSY
-            </div>
-
-            <div class="brand-content">
-
-                <small>GLOBAL • HANDMADE</small>
-
-                <h3>Etsy</h3>
-
-                <p>
-                    Handmade fashion, jewelry and
-                    unique accessories.
-                </p>
-
-                <a href="https://www.etsy.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- GUCCI -->
-
-        <article class="brand-card"
-                 data-category="fashion luxury">
-
-            <div class="brand-logo gucci">
-                GUCCI
-            </div>
-
-            <div class="brand-content">
-
-                <small>ITALY • LUXURY</small>
-
-                <h3>Gucci</h3>
-
-                <p>
-                    Italian luxury fashion and
-                    accessories.
-                </p>
-
-                <a href="https://www.gucci.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRADA -->
-
-        <article class="brand-card"
-                 data-category="fashion luxury">
-
-            <div class="brand-logo prada">
-                PRADA
-            </div>
-
-            <div class="brand-content">
-
-                <small>ITALY • LUXURY</small>
-
-                <h3>Prada</h3>
-
-                <p>
-                    Luxury fashion, bags, shoes
-                    and accessories.
-                </p>
-
-                <a href="https://www.prada.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- FARFETCH -->
-
-        <article class="brand-card"
-                 data-category="fashion luxury">
-
-            <div class="brand-logo farfetch">
-                FARFETCH
-            </div>
-
-            <div class="brand-content">
-
-                <small>GLOBAL • LUXURY</small>
-
-                <h3>Farfetch</h3>
-
-                <p>
-                    Designer fashion and luxury
-                    collections.
-                </p>
-
-                <a href="https://www.farfetch.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- SSENSE -->
-
-        <article class="brand-card"
-                 data-category="fashion luxury">
-
-            <div class="brand-logo ssense">
-                SSENSE
-            </div>
-
-            <div class="brand-content">
-
-                <small>GLOBAL • DESIGNER</small>
-
-                <h3>SSENSE</h3>
-
-                <p>
-                    Designer fashion and
-                    contemporary streetwear.
-                </p>
-
-                <a href="https://www.ssense.com/"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   class="visit-btn">
-                    Explore Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-
-    <div id="noResults" class="no-results">
-        <strong>No brands found</strong>
-        <p>Try another search or category.</p>
-    </div>
-
-
-</section>
-
-
-<!-- ================= WHY STYLEGATE ================= -->
-
-<section class="why-section">
-
-    <div class="section-header center-header">
-
-        <div>
-
-            <p class="eyebrow">
-                WHY STYLEGATE
-            </p>
-
-            <h2>
-                Fashion <span>Made Simple.</span>
-            </h2>
-
-        </div>
-
-    </div>
-
-
-    <div class="why-grid">
-
-        <div class="why-card">
-
-            <div class="why-icon">01</div>
-
-            <h3>Global Brands</h3>
-
-            <p>
-                Discover fashion brands from
-                different markets around the world.
+                Our goal is to help visitors discover fashion brands
+                and their online stores. Affiliate relationships do
+                not change the price you pay.
             </p>
 
         </div>
 
+    </section>
 
-        <div class="why-card">
-
-            <div class="why-icon">02</div>
-
-            <h3>Easy Discovery</h3>
-
-            <p>
-                Find fashion, shoes, sportswear
-                and luxury brands in one place.
-            </p>
-
-        </div>
-
-
-        <div class="why-card">
-
-            <div class="why-icon">03</div>
-
-            <h3>Simple Shopping</h3>
-
-            <p>
-                Choose a brand and visit its
-                official online store.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section class="about" id="about">
-
-    <p class="eyebrow">
-        ABOUT STYLEGATE
-    </p>
-
-    <h2>
-        One Gateway.
-        <span>Many Styles.</span>
-    </h2>
-
-    <p>
-        StyleGate is a fashion discovery platform designed
-        to help shoppers discover brands from around the world.
-        Instead of searching multiple websites, visitors can
-        explore different fashion categories and brands from
-        one simple platform.
-    </p>
-
-    <a href="#brands" class="main-btn">
-        Explore Brands →
-    </a>
-
-</section>
-
-
-<!-- ================= AFFILIATE DISCLOSURE ================= -->
-
-<section class="disclosure">
-
-    <div>
-
-        <span>TRANSPARENCY</span>
-
-        <h3>Affiliate Disclosure</h3>
-
-        <p>
-            Some links on StyleGate may become affiliate links.
-            If you make a purchase through an affiliate link,
-            StyleGate may earn a commission at no additional
-            cost to you.
-        </p>
-
-    </div>
-
-</section>
+</main>
 
 
 <!-- ================= FOOTER ================= -->
@@ -1030,7 +680,7 @@
         <div>
 
             <a href="#home" class="logo">
-                STYLE<span>GATE</span>
+                STYLE<span>ORA</span>
             </a>
 
             <p>
@@ -1039,11 +689,9 @@
 
         </div>
 
-
         <div class="footer-links">
 
             <a href="#home">Home</a>
-            <a href="#featured">Featured</a>
             <a href="#brands">Brands</a>
             <a href="#categories">Categories</a>
             <a href="#about">About</a>
@@ -1052,26 +700,16 @@
 
     </div>
 
-
     <div class="copyright">
-        © 2026 StyleGate. All rights reserved.
+        © 2026 Styleora. All rights reserved.
     </div>
 
 </footer>
 
 
 <script src="script.js"></script>
-
-</body>
-</html>
 ```
 
-              
-             
+</body>
 
-         
-          
-
-               
-
-          
+</html>
