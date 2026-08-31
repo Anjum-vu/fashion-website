@@ -24,7 +24,6 @@ if (menuBtn && navLinks) {
 
 /* =========================
    CLOSE MOBILE MENU
-   AFTER CLICKING LINK
 ========================= */
 
 const navItems = document.querySelectorAll(".nav-links a");
@@ -33,7 +32,9 @@ navItems.forEach(function (link) {
 
     link.addEventListener("click", function () {
 
-        navLinks.classList.remove("active");
+        if (navLinks) {
+            navLinks.classList.remove("active");
+        }
 
     });
 
@@ -44,35 +45,52 @@ navItems.forEach(function (link) {
    BRAND FILTER
 ========================= */
 
-const filterButtons = document.querySelectorAll(".filter-btn");
-const brandCards = document.querySelectorAll(".brand-card");
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const brandCards =
+    document.querySelectorAll(".brand-card");
+
+const noResults =
+    document.getElementById("noResults");
+
 
 filterButtons.forEach(function (button) {
 
     button.addEventListener("click", function () {
 
-        /* Remove active class */
+        /* Remove active button */
         filterButtons.forEach(function (btn) {
+
             btn.classList.remove("active");
+
         });
 
-        /* Add active class */
+
+        /* Add active button */
         button.classList.add("active");
 
+
+        /* Get selected category */
         const filter = button.dataset.filter;
+
 
         let visibleBrands = 0;
 
+
+        /* Check every brand */
         brandCards.forEach(function (card) {
 
-            const categories = card.dataset.category;
+            const category =
+                card.dataset.category;
+
 
             if (
                 filter === "all" ||
-                categories.includes(filter)
+                category === filter
             ) {
 
-                card.style.display = "block";
+                card.style.display = "";
 
                 visibleBrands++;
 
@@ -84,10 +102,8 @@ filterButtons.forEach(function (button) {
 
         });
 
-        /* Show / hide no result message */
 
-        const noResults =
-            document.getElementById("noResults");
+        /* No results message */
 
         if (noResults) {
 
@@ -115,24 +131,57 @@ filterButtons.forEach(function (button) {
 const categoryCards =
     document.querySelectorAll(".category-card");
 
+
 categoryCards.forEach(function (category) {
 
-    category.addEventListener("click", function () {
+    category.addEventListener("click", function (event) {
+
+        /*
+        Prevent normal jump first
+        */
+        event.preventDefault();
+
+
+        /*
+        Get category from HTML
+        */
 
         const categoryName =
-            category.classList[1];
+            category.dataset.categoryLink;
 
-        /* Find matching filter */
+
+        /*
+        Find matching filter
+        */
 
         filterButtons.forEach(function (button) {
 
-            if (button.dataset.filter === categoryName) {
+            if (
+                button.dataset.filter === categoryName
+            ) {
 
                 button.click();
 
             }
 
         });
+
+
+        /*
+        Move to brands section
+        */
+
+        const brandsSection =
+            document.getElementById("brands");
+
+
+        if (brandsSection) {
+
+            brandsSection.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
 
     });
 
@@ -146,17 +195,19 @@ categoryCards.forEach(function (category) {
 const copyright =
     document.querySelector(".copyright");
 
+
 if (copyright) {
 
     copyright.innerHTML =
-        "© " + new Date().getFullYear() +
+        "© " +
+        new Date().getFullYear() +
         " Styleora. All rights reserved.";
 
 }
 
 
 /* =========================
-   LOG MESSAGE
+   WEBSITE LOADED
 ========================= */
 
 console.log(
