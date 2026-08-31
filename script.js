@@ -24,13 +24,20 @@ if (menuBtn && navLinks) {
 
 
 /* =========================
-   BRAND SEARCH & FILTER
+   BRAND SEARCH + FILTER
 ========================= */
 
-const searchInput = document.getElementById("brandSearch");
-const filterButtons = document.querySelectorAll(".filter-btn");
-const brandCards = document.querySelectorAll(".brand-card");
-const noResults = document.getElementById("noResults");
+const searchInput =
+    document.getElementById("brandSearch");
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const brandCards =
+    document.querySelectorAll(".brand-card");
+
+const noResults =
+    document.getElementById("noResults");
 
 
 let currentFilter = "all";
@@ -38,7 +45,8 @@ let currentFilter = "all";
 
 function filterBrands() {
 
-    const searchText = searchInput.value.toLowerCase().trim();
+    const searchText =
+        searchInput.value.toLowerCase().trim();
 
     let visibleBrands = 0;
 
@@ -46,24 +54,24 @@ function filterBrands() {
     brandCards.forEach(function (card) {
 
         const brandName =
-            card.querySelector("h3").textContent.toLowerCase();
+            card.querySelector("h3")
+                .textContent
+                .toLowerCase();
 
         const category =
-            card.getAttribute("data-category").toLowerCase();
+            card.getAttribute("data-category")
+                .toLowerCase();
 
 
-        // Check search
         const matchesSearch =
             brandName.includes(searchText);
 
 
-        // Check category
         const matchesFilter =
             currentFilter === "all" ||
             category.includes(currentFilter);
 
 
-        // Show / Hide
         if (matchesSearch && matchesFilter) {
 
             card.style.display = "";
@@ -78,8 +86,6 @@ function filterBrands() {
 
     });
 
-
-    // No results message
 
     if (noResults) {
 
@@ -99,7 +105,7 @@ function filterBrands() {
 
 
 /* =========================
-   SEARCH EVENT
+   SEARCH
 ========================= */
 
 if (searchInput) {
@@ -122,8 +128,6 @@ filterButtons.forEach(function (button) {
     button.addEventListener("click", function () {
 
 
-        // Remove active class
-
         filterButtons.forEach(function (btn) {
 
             btn.classList.remove("active");
@@ -131,18 +135,73 @@ filterButtons.forEach(function (button) {
         });
 
 
-        // Add active class
-
         button.classList.add("active");
 
-
-        // Get selected filter
 
         currentFilter =
             button.getAttribute("data-filter");
 
 
-        // Apply filter
+        filterBrands();
+
+
+        // Scroll to brands
+
+        document.getElementById("brands")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    });
+
+});
+
+
+/* =========================
+   CATEGORY CARDS
+========================= */
+
+const categoryLinks =
+    document.querySelectorAll(
+        ".category-card"
+    );
+
+
+categoryLinks.forEach(function (card) {
+
+    card.addEventListener("click", function () {
+
+        const category =
+            card.getAttribute("data-category-link");
+
+
+        if (!category) {
+            return;
+        }
+
+
+        currentFilter = category;
+
+
+        filterButtons.forEach(function (button) {
+
+            if (
+                button.getAttribute("data-filter")
+                === category
+            ) {
+
+                filterButtons.forEach(function (btn) {
+
+                    btn.classList.remove("active");
+
+                });
+
+                button.classList.add("active");
+
+            }
+
+        });
+
 
         filterBrands();
 
@@ -153,11 +212,12 @@ filterButtons.forEach(function (button) {
 
 /* =========================
    CLOSE MOBILE MENU
-   AFTER CLICKING LINK
 ========================= */
 
 const navItems =
-    document.querySelectorAll(".nav-links a");
+    document.querySelectorAll(
+        ".nav-links a"
+    );
 
 
 navItems.forEach(function (link) {
@@ -177,41 +237,48 @@ navItems.forEach(function (link) {
 
 function updateBrandCount() {
 
-    const brandCount =
-        document.querySelectorAll(".brand-card").length;
+    const count =
+        document.querySelectorAll(
+            ".brand-card"
+        ).length;
 
-    const badgeNumber =
-        document.querySelector(".hero-badge strong");
 
-    if (badgeNumber) {
+    const heroCount =
+        document.getElementById(
+            "heroBrandCount"
+        );
 
-        badgeNumber.textContent =
-            brandCount + "+";
+
+    if (heroCount) {
+
+        heroCount.textContent =
+            count + "+";
 
     }
 
 }
 
 
-/* Run brand count */
-
 updateBrandCount();
 
 
 /* =========================
-   YEAR AUTOMATICALLY
+   CURRENT YEAR
 ========================= */
 
 const copyright =
     document.querySelector(".copyright");
 
+
 if (copyright) {
 
-    const currentYear =
+    const year =
         new Date().getFullYear();
 
+
     copyright.innerHTML =
-        "© " + currentYear +
+        "© " +
+        year +
         " StyleGate. All rights reserved.";
 
 }
