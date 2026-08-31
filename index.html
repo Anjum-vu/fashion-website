@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,9 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="StyleGate - Discover fashion brands from Pakistan, India and around the world.">
+        content="StyleGate is a global fashion discovery platform helping you discover fashion brands, shoes, accessories and trending styles from around the world.">
 
-    <title>StyleGate | Discover Fashion</title>
+    <meta name="keywords"
+        content="fashion brands, fashion shopping, affordable fashion, sneakers, luxury fashion, fashion trends, StyleGate">
+
+    <meta name="theme-color" content="#111111">
+
+    <title>StyleGate | Discover Your Style</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,65 +29,114 @@
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
 
 <header class="navbar">
 
     <div class="nav-container">
 
-        <a href="#home" class="logo">
+        <a href="#home" class="logo" aria-label="StyleGate Home">
             STYLE<span>GATE</span>
         </a>
 
-        <nav class="nav-links" id="navLinks">
+        <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+
             <a href="#home">Home</a>
             <a href="#brands">Brands</a>
             <a href="#categories">Categories</a>
+            <a href="#trending">Trending</a>
+            <a href="#style-guides">Style Guides</a>
             <a href="#about">About</a>
+
         </nav>
 
-        <button class="menu-btn" id="menuBtn">
-            ☰
-        </button>
+        <div class="nav-actions">
+
+            <button class="search-trigger" id="searchTrigger" aria-label="Search">
+                ⌕
+            </button>
+
+            <a href="#brands" class="nav-shop-btn">
+                Explore
+            </a>
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Open menu"
+                aria-expanded="false">
+                ☰
+            </button>
+
+        </div>
 
     </div>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<main>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <p class="eyebrow">
-            YOUR FASHION GATEWAY
-        </p>
-
-        <h1>
-            Discover Your
-            <span>Perfect Style.</span>
-        </h1>
-
-        <p class="hero-text">
-            Discover popular fashion brands from Pakistan,
-            India and around the world — all in one place.
-        </p>
-
-        <a href="#brands" class="main-btn">
-            Explore Brands →
-        </a>
-
-    </div>
 
     <div class="hero-image">
 
         <div class="hero-overlay"></div>
 
-        <div class="hero-badge">
-            <strong>14+</strong>
-            <small>Fashion Brands</small>
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                YOUR GLOBAL FASHION GATEWAY
+            </p>
+
+            <h1>
+                Discover Your
+                <span>Perfect Style.</span>
+            </h1>
+
+            <p class="hero-text">
+                Explore fashion, footwear and accessories from
+                popular brands around the world — all in one place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#brands" class="main-btn">
+                    Explore Brands <span>→</span>
+                </a>
+
+                <a href="#categories" class="secondary-btn">
+                    Find Your Style
+                </a>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div>
+                    <strong>14+</strong>
+                    <span>Brands</span>
+                </div>
+
+                <div>
+                    <strong>04</strong>
+                    <span>Categories</span>
+                </div>
+
+                <div>
+                    <strong>Global</strong>
+                    <span>Fashion</span>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
@@ -89,23 +144,303 @@
 </section>
 
 
-<!-- ================= BRANDS ================= -->
+<!-- =========================================================
+     INTRO / VALUE PROPOSITION
+========================================================= -->
+
+<section class="intro-section">
+
+    <div class="intro-content">
+
+        <p class="eyebrow">
+            DISCOVER • COMPARE • SHOP
+        </p>
+
+        <h2>
+            Fashion inspiration,
+            <span>all in one place.</span>
+        </h2>
+
+        <p>
+            StyleGate brings fashion brands, trends and shopping
+            inspiration together so you can discover your next
+            favorite look without searching everywhere.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SHOP BY CATEGORY
+========================================================= -->
+
+<section class="categories" id="categories">
+
+    <div class="section-header">
+
+        <div>
+
+            <p class="eyebrow">
+                FIND YOUR STYLE
+            </p>
+
+            <h2>
+                Shop by <span>Category</span>
+            </h2>
+
+        </div>
+
+        <p>
+            Explore different fashion worlds and discover
+            brands that match your style.
+        </p>
+
+    </div>
+
+
+    <div class="category-grid">
+
+        <a
+            href="#brands"
+            class="category-card fashion"
+            data-filter-category="fashion">
+
+            <div class="category-number">01</div>
+
+            <div class="category-info">
+                <h3>Fashion</h3>
+                <p>Clothing & everyday style</p>
+                <span>Explore →</span>
+            </div>
+
+        </a>
+
+
+        <a
+            href="#brands"
+            class="category-card shoes"
+            data-filter-category="footwear">
+
+            <div class="category-number">02</div>
+
+            <div class="category-info">
+                <h3>Footwear</h3>
+                <p>Sneakers & shoes</p>
+                <span>Explore →</span>
+            </div>
+
+        </a>
+
+
+        <a
+            href="#brands"
+            class="category-card sports"
+            data-filter-category="sports">
+
+            <div class="category-number">03</div>
+
+            <div class="category-info">
+                <h3>Sports</h3>
+                <p>Performance & streetwear</p>
+                <span>Explore →</span>
+            </div>
+
+        </a>
+
+
+        <a
+            href="#brands"
+            class="category-card luxury"
+            data-filter-category="luxury">
+
+            <div class="category-number">04</div>
+
+            <div class="category-info">
+                <h3>Luxury</h3>
+                <p>Designer fashion & accessories</p>
+                <span>Explore →</span>
+            </div>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRENDING
+========================================================= -->
+
+<section class="trending-section" id="trending">
+
+    <div class="section-header">
+
+        <div>
+
+            <p class="eyebrow">
+                WHAT'S TRENDING
+            </p>
+
+            <h2>
+                Trending <span>Brands</span>
+            </h2>
+
+        </div>
+
+        <a href="#brands" class="text-link">
+            View all brands →
+        </a>
+
+    </div>
+
+
+    <div class="trending-grid">
+
+        <article class="trend-card">
+
+            <div class="trend-number">01</div>
+
+            <div class="trend-brand">SHEIN</div>
+
+            <p>
+                Affordable fashion and everyday trends.
+            </p>
+
+            <a href="#brands">
+                Explore brand →
+            </a>
+
+        </article>
+
+
+        <article class="trend-card">
+
+            <div class="trend-number">02</div>
+
+            <div class="trend-brand">ASOS</div>
+
+            <p>
+                Modern fashion for men and women.
+            </p>
+
+            <a href="#brands">
+                Explore brand →
+            </a>
+
+        </article>
+
+
+        <article class="trend-card">
+
+            <div class="trend-number">03</div>
+
+            <div class="trend-brand">ADIDAS</div>
+
+            <p>
+                Sneakers, sportswear and street style.
+            </p>
+
+            <a href="#brands">
+                Explore brand →
+            </a>
+
+        </article>
+
+
+        <article class="trend-card">
+
+            <div class="trend-number">04</div>
+
+            <div class="trend-brand">PUMA</div>
+
+            <p>
+                Sport-inspired fashion and footwear.
+            </p>
+
+            <a href="#brands">
+                Explore brand →
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BUDGET FASHION
+========================================================= -->
+
+<section class="budget-section">
+
+    <div class="budget-content">
+
+        <p class="eyebrow">
+            SMART STYLE
+        </p>
+
+        <h2>
+            Great Style.
+            <span>Better Prices.</span>
+        </h2>
+
+        <p>
+            Discover affordable fashion finds and everyday
+            essentials without compromising on style.
+        </p>
+
+        <a href="#brands" class="main-btn">
+            Explore Affordable Fashion →
+        </a>
+
+    </div>
+
+
+    <div class="budget-highlight">
+
+        <span>STYLE PICKS</span>
+
+        <strong>
+            UNDER
+            <em>$50</em>
+        </strong>
+
+        <small>
+            Fashion finds worth discovering
+        </small>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BRANDS
+========================================================= -->
 
 <section class="brands-section" id="brands">
 
     <div class="section-header">
 
         <div>
-            <p class="eyebrow">EXPLORE</p>
+
+            <p class="eyebrow">
+                EXPLORE
+            </p>
 
             <h2>
                 Fashion <span>Brands</span>
             </h2>
+
         </div>
 
         <p>
-            Find a brand and visit its online store
-            with one click.
+            Discover a growing collection of fashion,
+            footwear and lifestyle brands.
         </p>
 
     </div>
@@ -115,46 +450,60 @@
 
     <div class="search-box">
 
-        <span>⌕</span>
+        <span aria-hidden="true">⌕</span>
 
         <input
-            type="text"
+            type="search"
             id="brandSearch"
             placeholder="Search brands..."
-        >
+            aria-label="Search fashion brands">
 
     </div>
 
 
     <!-- FILTERS -->
 
-    <div class="filters">
+    <div class="filters" role="group" aria-label="Brand filters">
 
-        <button class="filter-btn active" data-filter="all">
+        <button
+            class="filter-btn active"
+            data-filter="all">
             All
         </button>
 
-        <button class="filter-btn" data-filter="pakistan">
+        <button
+            class="filter-btn"
+            data-filter="pakistan">
             Pakistan
         </button>
 
-        <button class="filter-btn" data-filter="india">
+        <button
+            class="filter-btn"
+            data-filter="india">
             India
         </button>
 
-        <button class="filter-btn" data-filter="international">
+        <button
+            class="filter-btn"
+            data-filter="international">
             International
         </button>
 
-        <button class="filter-btn" data-filter="sports">
+        <button
+            class="filter-btn"
+            data-filter="sports">
             Sports
         </button>
 
-        <button class="filter-btn" data-filter="luxury">
+        <button
+            class="filter-btn"
+            data-filter="luxury">
             Luxury
         </button>
 
-        <button class="filter-btn" data-filter="footwear">
+        <button
+            class="filter-btn"
+            data-filter="footwear">
             Footwear
         </button>
 
@@ -168,11 +517,12 @@
 
         <!-- KHAADI -->
 
-        <article class="brand-card"
-                 data-category="pakistan fashion">
+        <article
+            class="brand-card"
+            data-category="pakistan fashion">
 
-            <div class="brand-logo khaadi">
-                KHAADI
+            <div class="brand-visual khaadi">
+                <span>KHAADI</span>
             </div>
 
             <div class="brand-content">
@@ -182,7 +532,7 @@
                 <h3>Khaadi</h3>
 
                 <p>
-                    Pakistani fashion and lifestyle brand.
+                    Pakistani fashion and lifestyle collections.
                 </p>
 
                 <a
@@ -190,7 +540,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="visit-btn">
-                    Visit Store →
+                    Explore Store →
                 </a>
 
             </div>
@@ -200,11 +550,12 @@
 
         <!-- SAPPHIRE -->
 
-        <article class="brand-card"
-                 data-category="pakistan fashion">
+        <article
+            class="brand-card"
+            data-category="pakistan fashion">
 
-            <div class="brand-logo sapphire">
-                SAPPHIRE
+            <div class="brand-visual sapphire">
+                <span>SAPPHIRE</span>
             </div>
 
             <div class="brand-content">
@@ -222,7 +573,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="visit-btn">
-                    Visit Store →
+                    Explore Store →
                 </a>
 
             </div>
@@ -232,11 +583,12 @@
 
         <!-- OUTFITTERS -->
 
-        <article class="brand-card"
-                 data-category="pakistan fashion">
+        <article
+            class="brand-card"
+            data-category="pakistan fashion">
 
-            <div class="brand-logo outfitters">
-                OUTFITTERS
+            <div class="brand-visual outfitters">
+                <span>OUTFITTERS</span>
             </div>
 
             <div class="brand-content">
@@ -254,7 +606,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="visit-btn">
-                    Visit Store →
+                    Explore Store →
                 </a>
 
             </div>
@@ -264,11 +616,12 @@
 
         <!-- GUL AHMED -->
 
-        <article class="brand-card"
-                 data-category="pakistan fashion">
+        <article
+            class="brand-card"
+            data-category="pakistan fashion">
 
-            <div class="brand-logo gul-ahmed">
-                GUL AHMED
+            <div class="brand-visual gul-ahmed">
+                <span>GUL AHMED</span>
             </div>
 
             <div class="brand-content">
@@ -286,7 +639,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="visit-btn">
-                    Visit Store →
+                    Explore Store →
                 </a>
 
             </div>
@@ -296,11 +649,12 @@
 
         <!-- AJIO -->
 
-        <article class="brand-card"
-                 data-category="india fashion">
+        <article
+            class="brand-card"
+            data-category="india fashion">
 
-            <div class="brand-logo ajio">
-                AJIO
+            <div class="brand-visual ajio">
+                <span>AJIO</span>
             </div>
 
             <div class="brand-content">
@@ -318,7 +672,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="visit-btn">
-                    Visit Store →
+                    Explore Store →
                 </a>
 
             </div>
@@ -328,11 +682,12 @@
 
         <!-- MYNTRA -->
 
-        <article class="brand-card"
-                 data-category="india fashion">
+        <article
+            class="brand-card"
+            data-category="india fashion">
 
-            <div class="brand-logo myntra">
-                MYNTRA
+            <div class="brand-visual myntra">
+                <span>MYNTRA</span>
             </div>
 
             <div class="brand-content">
@@ -342,7 +697,7 @@
                 <h3>Myntra</h3>
 
                 <p>
-                    Popular Indian fashion and lifestyle platform.
+                    Indian fashion and lifestyle platform.
                 </p>
 
                 <a
@@ -350,7 +705,71 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="visit-btn">
-                    Visit Store →
+                    Explore Store →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- SHEIN -->
+
+        <article
+            class="brand-card featured-brand"
+            data-category="international fashion">
+
+            <div class="brand-visual shein">
+                <span>SHEIN</span>
+            </div>
+
+            <div class="brand-content">
+
+                <small>INTERNATIONAL • FASHION</small>
+
+                <h3>SHEIN</h3>
+
+                <p>
+                    Affordable fashion and trending styles.
+                </p>
+
+                <a
+                    href="#"
+                    class="visit-btn affiliate-link"
+                    data-brand="shein">
+                    Check Collection →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- ASOS -->
+
+        <article
+            class="brand-card featured-brand"
+            data-category="international fashion">
+
+            <div class="brand-visual asos">
+                <span>ASOS</span>
+            </div>
+
+            <div class="brand-content">
+
+                <small>INTERNATIONAL • FASHION</small>
+
+                <h3>ASOS</h3>
+
+                <p>
+                    Fashion, beauty and lifestyle for modern shoppers.
+                </p>
+
+                <a
+                    href="#"
+                    class="visit-btn affiliate-link"
+                    data-brand="asos">
+                    Check Collection →
                 </a>
 
             </div>
@@ -360,11 +779,12 @@
 
         <!-- NIKE -->
 
-        <article class="brand-card"
-                 data-category="international sports footwear">
+        <article
+            class="brand-card"
+            data-category="international sports footwear">
 
-            <div class="brand-logo nike">
-                NIKE
+            <div class="brand-visual nike">
+                <span>NIKE</span>
             </div>
 
             <div class="brand-content">
@@ -382,7 +802,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="visit-btn">
-                    Visit Store →
+                    Explore Store →
                 </a>
 
             </div>
@@ -392,11 +812,12 @@
 
         <!-- ADIDAS -->
 
-        <article class="brand-card"
-                 data-category="international sports footwear">
+        <article
+            class="brand-card"
+            data-category="international sports footwear">
 
-            <div class="brand-logo adidas">
-                ADIDAS
+            <div class="brand-visual adidas">
+                <span>ADIDAS</span>
             </div>
 
             <div class="brand-content">
@@ -414,7 +835,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="visit-btn">
-                    Visit Store →
+                    Explore Store →
                 </a>
 
             </div>
@@ -422,63 +843,31 @@
         </article>
 
 
-        <!-- GUCCI -->
+        <!-- PUMA -->
 
-        <article class="brand-card"
-                 data-category="international luxury">
+        <article
+            class="brand-card"
+            data-category="international sports footwear">
 
-            <div class="brand-logo gucci">
-                GUCCI
+            <div class="brand-visual puma">
+                <span>PUMA</span>
             </div>
 
             <div class="brand-content">
 
-                <small>INTERNATIONAL • LUXURY</small>
+                <small>INTERNATIONAL • SPORTS</small>
 
-                <h3>Gucci</h3>
+                <h3>PUMA</h3>
 
                 <p>
-                    Italian luxury fashion and accessories.
+                    Sport-inspired footwear, apparel and lifestyle.
                 </p>
 
                 <a
-                    href="https://www.gucci.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="visit-btn">
-                    Visit Store →
-                </a>
-
-            </div>
-
-        </article>
-
-
-        <!-- PRADA -->
-
-        <article class="brand-card"
-                 data-category="international luxury">
-
-            <div class="brand-logo prada">
-                PRADA
-            </div>
-
-            <div class="brand-content">
-
-                <small>INTERNATIONAL • LUXURY</small>
-
-                <h3>Prada</h3>
-
-                <p>
-                    Luxury fashion, bags, shoes and accessories.
-                </p>
-
-                <a
-                    href="https://www.prada.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="visit-btn">
-                    Visit Store →
+                    href="#"
+                    class="visit-btn affiliate-link"
+                    data-brand="puma">
+                    Check Collection →
                 </a>
 
             </div>
@@ -488,11 +877,12 @@
 
         <!-- NEW BALANCE -->
 
-        <article class="brand-card"
-                 data-category="international sports footwear">
+        <article
+            class="brand-card"
+            data-category="international sports footwear">
 
-            <div class="brand-logo newbalance">
-                NB
+            <div class="brand-visual newbalance">
+                <span>NB</span>
             </div>
 
             <div class="brand-content">
@@ -502,7 +892,7 @@
                 <h3>New Balance</h3>
 
                 <p>
-                    Performance shoes and sportswear.
+                    Performance shoes and everyday sneakers.
                 </p>
 
                 <a
@@ -510,7 +900,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="visit-btn">
-                    Visit Store →
+                    Explore Store →
                 </a>
 
             </div>
@@ -520,11 +910,12 @@
 
         <!-- CONVERSE -->
 
-        <article class="brand-card"
-                 data-category="international footwear">
+        <article
+            class="brand-card"
+            data-category="international footwear">
 
-            <div class="brand-logo converse">
-                CONVERSE
+            <div class="brand-visual converse">
+                <span>CONVERSE</span>
             </div>
 
             <div class="brand-content">
@@ -542,7 +933,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="visit-btn">
-                    Visit Store →
+                    Explore Store →
                 </a>
 
             </div>
@@ -552,11 +943,12 @@
 
         <!-- ZARA -->
 
-        <article class="brand-card"
-                 data-category="international fashion">
+        <article
+            class="brand-card"
+            data-category="international fashion">
 
-            <div class="brand-logo zara">
-                ZARA
+            <div class="brand-visual zara">
+                <span>ZARA</span>
             </div>
 
             <div class="brand-content">
@@ -574,7 +966,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="visit-btn">
-                    Visit Store →
+                    Explore Store →
                 </a>
 
             </div>
@@ -584,11 +976,12 @@
 
         <!-- H&M -->
 
-        <article class="brand-card"
-                 data-category="international fashion">
+        <article
+            class="brand-card"
+            data-category="international fashion">
 
-            <div class="brand-logo hm">
-                H&M
+            <div class="brand-visual hm">
+                <span>H&M</span>
             </div>
 
             <div class="brand-content">
@@ -606,7 +999,7 @@
                     target="_blank"
                     rel="noopener noreferrer"
                     class="visit-btn">
-                    Visit Store →
+                    Explore Store →
                 </a>
 
             </div>
@@ -614,97 +1007,379 @@
         </article>
 
 
+        <!-- GUCCI -->
+
+        <article
+            class="brand-card"
+            data-category="international luxury">
+
+            <div class="brand-visual gucci">
+                <span>GUCCI</span>
+            </div>
+
+            <div class="brand-content">
+
+                <small>INTERNATIONAL • LUXURY</small>
+
+                <h3>Gucci</h3>
+
+                <p>
+                    Italian luxury fashion and accessories.
+                </p>
+
+                <a
+                    href="https://www.gucci.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-btn">
+                    Explore Store →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRADA -->
+
+        <article
+            class="brand-card"
+            data-category="international luxury">
+
+            <div class="brand-visual prada">
+                <span>PRADA</span>
+            </div>
+
+            <div class="brand-content">
+
+                <small>INTERNATIONAL • LUXURY</small>
+
+                <h3>Prada</h3>
+
+                <p>
+                    Luxury fashion, bags, shoes and accessories.
+                </p>
+
+                <a
+                    href="https://www.prada.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="visit-btn">
+                    Explore Store →
+                </a>
+
+            </div>
+
+        </article>
+
     </div>
 
 
-    <div id="noResults" class="no-results">
-        No brand found.
+    <div id="noResults" class="no-results" hidden>
+        No brand found. Try another search.
     </div>
 
 </section>
 
 
-<!-- ================= CATEGORIES ================= -->
+<!-- =========================================================
+     COMPLETE THE LOOK
+========================================================= -->
 
-<section class="categories" id="categories">
+<section class="look-section">
 
-    <div class="category-heading">
+    <div class="look-content">
 
         <p class="eyebrow">
-            FIND YOUR STYLE
+            STYLE IDEA
         </p>
 
         <h2>
-            Shop by <span>Category</span>
+            Complete
+            <span>The Look.</span>
+        </h2>
+
+        <p>
+            Build an outfit around your favorite style.
+            Mix fashion, footwear and accessories to create
+            a complete look.
+        </p>
+
+        <a href="#brands" class="main-btn">
+            Explore Brands →
+        </a>
+
+    </div>
+
+
+    <div class="look-items">
+
+        <div class="look-item">
+            <span>01</span>
+            <strong>TOP</strong>
+        </div>
+
+        <div class="look-item">
+            <span>02</span>
+            <strong>BOTTOM</strong>
+        </div>
+
+        <div class="look-item">
+            <span>03</span>
+            <strong>SHOES</strong>
+        </div>
+
+        <div class="look-item">
+            <span>04</span>
+            <strong>ACCESSORIES</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STYLE GUIDES
+========================================================= -->
+
+<section class="style-guides" id="style-guides">
+
+    <div class="section-header">
+
+        <div>
+
+            <p class="eyebrow">
+                STYLE STORIES
+            </p>
+
+            <h2>
+                Fashion <span>Guides</span>
+            </h2>
+
+        </div>
+
+        <p>
+            Inspiration, styling ideas and useful fashion
+            guides for everyday life.
+        </p>
+
+    </div>
+
+
+    <div class="guide-grid">
+
+        <article class="guide-card">
+
+            <div class="guide-number">
+                01
+            </div>
+
+            <div class="guide-content">
+
+                <small>STUDENT STYLE</small>
+
+                <h3>
+                    Best University Outfits
+                </h3>
+
+                <p>
+                    Simple and comfortable outfit ideas
+                    for everyday campus life.
+                </p>
+
+                <a href="#">
+                    Read Guide →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="guide-card">
+
+            <div class="guide-number">
+                02
+            </div>
+
+            <div class="guide-content">
+
+                <small>SHOES</small>
+
+                <h3>
+                    Best Everyday Sneakers
+                </h3>
+
+                <p>
+                    Discover versatile sneakers for
+                    casual and everyday outfits.
+                </p>
+
+                <a href="#">
+                    Read Guide →
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="guide-card">
+
+            <div class="guide-number">
+                03
+            </div>
+
+            <div class="guide-content">
+
+                <small>BUDGET FASHION</small>
+
+                <h3>
+                    Fashion Finds Under $50
+                </h3>
+
+                <p>
+                    Stylish and affordable fashion ideas
+                    worth checking out.
+                </p>
+
+                <a href="#">
+                    Read Guide →
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     BRAND CTA
+========================================================= -->
+
+<section class="brand-cta">
+
+    <div>
+
+        <p class="eyebrow">
+            YOUR STYLE STARTS HERE
+        </p>
+
+        <h2>
+            Find something
+            <span>you'll love.</span>
         </h2>
 
     </div>
 
-
-    <div class="category-grid">
-
-        <a href="#brands" class="category-card fashion">
-            <span>01</span>
-            <h3>Fashion</h3>
-            <p>Explore fashion brands →</p>
-        </a>
-
-        <a href="#brands" class="category-card sports">
-            <span>02</span>
-            <h3>Sports</h3>
-            <p>Explore sports brands →</p>
-        </a>
-
-        <a href="#brands" class="category-card shoes">
-            <span>03</span>
-            <h3>Footwear</h3>
-            <p>Find shoes & sneakers →</p>
-        </a>
-
-        <a href="#brands" class="category-card luxury">
-            <span>04</span>
-            <h3>Luxury</h3>
-            <p>Discover luxury brands →</p>
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section class="about" id="about">
-
-    <p class="eyebrow">
-        ABOUT STYLEGATE
-    </p>
-
-    <h2>
-        One Gateway.
-        <span>Many Styles.</span>
-    </h2>
-
-    <p>
-        StyleGate helps shoppers discover fashion brands
-        from Pakistan, India and around the world.
-        Find a brand, explore its store and discover your style.
-    </p>
-
     <a href="#brands" class="main-btn">
-        Explore Brands →
+        Explore All Brands →
     </a>
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="about" id="about">
+
+    <div class="about-content">
+
+        <p class="eyebrow">
+            ABOUT STYLEGATE
+        </p>
+
+        <h2>
+            One Gateway.
+            <span>Many Styles.</span>
+        </h2>
+
+        <p>
+            StyleGate is a fashion discovery platform created
+            to help shoppers discover brands, explore different
+            styles and find fashion inspiration from around
+            the world.
+        </p>
+
+        <p>
+            We connect you with fashion stores and brands.
+            When available, some links on StyleGate may be
+            affiliate links, which means we may earn a commission
+            if you make a qualifying purchase through them.
+        </p>
+
+        <a href="#brands" class="main-btn">
+            Start Exploring →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     NEWSLETTER
+========================================================= -->
+
+<section class="newsletter">
+
+    <div>
+
+        <p class="eyebrow">
+            STYLE UPDATES
+        </p>
+
+        <h2>
+            Stay in the
+            <span>fashion loop.</span>
+        </h2>
+
+        <p>
+            Get fashion inspiration, new brand discoveries
+            and style guides.
+        </p>
+
+    </div>
+
+
+    <form class="newsletter-form" id="newsletterForm">
+
+        <label for="email" class="sr-only">
+            Email address
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Your email address"
+            required>
+
+        <button type="submit">
+            Subscribe →
+        </button>
+
+    </form>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
     <div class="footer-top">
 
-        <div>
+        <div class="footer-brand">
 
             <a href="#home" class="logo">
                 STYLE<span>GATE</span>
@@ -716,25 +1391,101 @@
 
         </div>
 
-        <div class="footer-links">
+
+        <div class="footer-column">
+
+            <h4>Explore</h4>
 
             <a href="#home">Home</a>
             <a href="#brands">Brands</a>
             <a href="#categories">Categories</a>
+            <a href="#trending">Trending</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Discover</h4>
+
+            <a href="#style-guides">Style Guides</a>
             <a href="#about">About</a>
+            <a href="#brands">Fashion</a>
+            <a href="#brands">Footwear</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Information</h4>
+
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Affiliate Disclosure</a>
+            <a href="#">Contact</a>
 
         </div>
 
     </div>
 
-    <div class="copyright">
-        © 2026 StyleGate. All rights reserved.
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 StyleGate. All rights reserved.
+        </p>
+
+        <p>
+            Fashion discovery platform.
+        </p>
+
     </div>
 
 </footer>
 
 
+<!-- =========================================================
+     SEARCH OVERLAY
+========================================================= -->
+
+<div class="search-overlay" id="searchOverlay">
+
+    <div class="search-overlay-content">
+
+        <button
+            class="close-search"
+            id="closeSearch"
+            aria-label="Close search">
+            ×
+        </button>
+
+        <p class="eyebrow">
+            SEARCH STYLEGATE
+        </p>
+
+        <h2>
+            What are you
+            <span>looking for?</span>
+        </h2>
+
+        <input
+            type="search"
+            id="globalSearch"
+            placeholder="Search brands, fashion, shoes..."
+            autocomplete="off">
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script src="script.js"></script>
 
 </body>
 </html>
+```
