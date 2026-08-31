@@ -1,728 +1,593 @@
-/* =========================
-   STYLEGATE CSS
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Inter", sans-serif;
-    background: #f7f5f0;
-    color: #171717;
-    line-height: 1.6;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-button,
-input {
-    font-family: inherit;
-}
-
-:root {
-    --black: #171717;
-    --gold: #bd9150;
-    --light: #f7f5f0;
-    --white: #fff;
-    --gray: #777;
-    --border: #e5e1d9;
-}
-
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(247,245,240,.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-}
-
-.nav-container {
-    width: min(1200px, 92%);
-    height: 72px;
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.logo {
-    font-size: 23px;
-    font-weight: 800;
-}
-
-.logo span {
-    color: var(--gold);
-}
-
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
-
-.nav-links a {
-    font-size: 13px;
-    font-weight: 600;
-    color: #555;
-}
-
-.nav-links a:hover {
-    color: var(--gold);
-}
-
-.menu-btn {
-    display: none;
-    border: 0;
-    background: none;
-    font-size: 26px;
-    cursor: pointer;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    width: min(1200px, 92%);
-    min-height: 600px;
-    margin: 30px auto;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    overflow: hidden;
-    border-radius: 22px;
-
-    background: var(--black);
-    color: white;
-}
-
-.hero-content {
-    padding: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.eyebrow {
-    color: var(--gold);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-}
-
-.hero h1 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(50px, 6vw, 80px);
-    line-height: 1;
-    margin-bottom: 25px;
-}
-
-.hero h1 span {
-    display: block;
-    color: #d4a762;
-}
-
-.hero-text {
-    max-width: 450px;
-    color: #ccc;
-    font-size: 14px;
-    margin-bottom: 30px;
-}
-
-.main-btn {
-    display: inline-block;
-    width: fit-content;
-    padding: 13px 21px;
-
-    background: var(--gold);
-    color: #111;
-
-    border-radius: 5px;
-
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.main-btn:hover {
-    background: white;
-}
-
-.hero-image {
-    position: relative;
-
-    background:
-        linear-gradient(
-            rgba(0,0,0,.1),
-            rgba(0,0,0,.4)
-        ),
-        url("https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=85");
-
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-badge {
-    position: absolute;
-    right: 25px;
-    bottom: 25px;
-
-    padding: 15px 20px;
-
-    background: white;
-    color: #111;
-
-    border-radius: 7px;
-}
-
-.hero-badge strong {
-    display: block;
-    font-size: 25px;
-}
-
-.hero-badge small {
-    color: #777;
-}
-
-
-/* =========================
-   BRANDS
-========================= */
-
-.brands-section {
-    width: min(1200px, 92%);
-    margin: 100px auto;
-}
-
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-
-    gap: 30px;
-    margin-bottom: 35px;
-}
-
-.section-header h2,
-.category-heading h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(38px, 5vw, 55px);
-    line-height: 1;
-}
-
-.section-header h2 span,
-.category-heading h2 span,
-.about h2 span {
-    color: var(--gold);
-}
-
-.section-header > p {
-    max-width: 350px;
-    color: var(--gray);
-    font-size: 13px;
-}
-
-
-/* SEARCH */
-
-.search-box {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-
-    padding: 14px 18px;
-
-    display: flex;
-    align-items: center;
-
-    margin-bottom: 20px;
-}
-
-.search-box span {
-    font-size: 24px;
-    margin-right: 10px;
-    color: #777;
-}
-
-.search-box input {
-    width: 100%;
-    border: 0;
-    outline: 0;
-    font-size: 14px;
-}
-
-
-/* FILTERS */
-
-.filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 30px;
-}
-
-.filter-btn {
-    border: 1px solid var(--border);
-    background: white;
-
-    padding: 9px 15px;
-
-    border-radius: 20px;
-
-    cursor: pointer;
-    font-size: 11px;
-    font-weight: 600;
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-    background: var(--black);
-    color: white;
-}
-
-
-/* BRAND GRID */
-
-.brand-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.brand-card {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-
-    transition: .3s;
-}
-
-.brand-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,.08);
-}
-
-.brand-logo {
-    height: 160px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: 2px;
-}
-
-
-/* LOGO COLORS */
-
-.khaadi {
-    background: #111;
-    color: #d6b76c;
-    font-family: Georgia, serif;
-}
-
-.sapphire {
-    background: #eee9e2;
-    color: #111;
-}
-
-.outfitters {
-    background: #111;
-    color: white;
-}
-
-.gul-ahmed {
-    background: #1d2935;
-    color: #d7b56d;
-}
-
-.ajio {
-    background: #111;
-    color: white;
-}
-
-.myntra {
-    background: #ff3f6c;
-    color: white;
-}
-
-.nike {
-    background: #111;
-    color: white;
-    font-style: italic;
-}
-
-.adidas {
-    background: #e8e8e8;
-    color: #111;
-}
-
-.gucci {
-    background: #14251c;
-    color: #d6b76c;
-}
-
-.prada {
-    background: #eeeae2;
-    color: #111;
-}
-
-.newbalance {
-    background: #c8102e;
-    color: white;
-}
-
-.converse {
-    background: #e9e9e9;
-    color: #111;
-}
-
-.zara {
-    background: #eee;
-    color: #111;
-    font-family: Georgia, serif;
-}
-
-.hm {
-    background: #e31837;
-    color: white;
-}
-
-
-/* BRAND CONTENT */
-
-.brand-content {
-    padding: 22px;
-}
-
-.brand-content small {
-    color: var(--gold);
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
-
-.brand-content h3 {
-    margin: 6px 0;
-    font-size: 20px;
-}
-
-.brand-content p {
-    color: var(--gray);
-    font-size: 12px;
-    min-height: 38px;
-    margin-bottom: 18px;
-}
-
-.visit-btn {
-    display: inline-block;
-
-    border-bottom: 1px solid #111;
-    padding-bottom: 3px;
-
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.visit-btn:hover {
-    color: var(--gold);
-    border-color: var(--gold);
-}
-
-
-/* NO RESULTS */
-
-.no-results {
-    display: none;
-    text-align: center;
-    padding: 40px;
-    color: #777;
-}
-
-
-/* =========================
-   CATEGORIES
-========================= */
-
-.categories {
-    background: var(--black);
-    color: white;
-    padding: 100px 4%;
-}
-
-.category-heading {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.category-grid {
-    width: min(1200px, 100%);
-    margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
-
-.category-card {
-    min-height: 250px;
-    padding: 25px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-
-    border-radius: 10px;
-
-    background-size: cover;
-    background-position: center;
-
-    position: relative;
-    overflow: hidden;
-}
-
-.category-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        transparent,
-        rgba(0,0,0,.9)
+```javascript
+/* =====================================================
+   STYLEGATE — MAIN JAVASCRIPT
+   Fashion Affiliate Discovery Website
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* =================================================
+       ELEMENTS
+    ================================================= */
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    const searchInput = document.getElementById("brandSearch");
+    const brandGrid = document.getElementById("brandGrid");
+    const brandCards = Array.from(
+        document.querySelectorAll(".brand-card")
     );
-}
 
-.category-card > * {
-    position: relative;
-    z-index: 1;
-}
+    const filterButtons = Array.from(
+        document.querySelectorAll(".filter-btn")
+    );
 
-.category-card span {
-    color: var(--gold);
-}
+    const noResults = document.getElementById("noResults");
 
-.category-card h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 25px;
-}
-
-.category-card p {
-    color: #ddd;
-    font-size: 11px;
-}
-
-.fashion {
-    background-image: url("https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=700&q=80");
-}
-
-.sports {
-    background-image: url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80");
-}
-
-.shoes {
-    background-image: url("https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80");
-}
-
-.luxury {
-    background-image: url("https://images.unsplash.com/photo-1559563458-527698bf5295?auto=format&fit=crop&w=700&q=80");
-}
+    const categoryCards = Array.from(
+        document.querySelectorAll(".category-card")
+    );
 
 
-/* =========================
-   ABOUT
-========================= */
+    /* =================================================
+       CURRENT FILTER
+    ================================================= */
 
-.about {
-    width: min(1000px, 92%);
-    margin: 100px auto;
-    padding: 70px;
-
-    background: #e8dfcf;
-    border-radius: 20px;
-}
-
-.about h2 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(42px, 6vw, 65px);
-    line-height: 1;
-    margin-bottom: 25px;
-}
-
-.about > p:not(.eyebrow) {
-    max-width: 650px;
-    color: #555;
-    font-size: 14px;
-    margin-bottom: 25px;
-}
+    let currentFilter = "all";
 
 
-/* =========================
-   FOOTER
-========================= */
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
 
-footer {
-    background: #111;
-    color: white;
-    padding: 50px 4% 20px;
-}
+    if (menuBtn && navLinks) {
 
-.footer-top {
-    width: min(1200px, 100%);
-    margin: auto;
+        menuBtn.addEventListener("click", () => {
 
-    display: flex;
-    justify-content: space-between;
+            navLinks.classList.toggle("active");
+            document.body.classList.toggle("menu-open");
 
-    padding-bottom: 35px;
-}
+            const isOpen =
+                navLinks.classList.contains("active");
 
-.footer-top p {
-    color: #777;
-    font-size: 12px;
-    margin-top: 5px;
-}
+            menuBtn.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
 
-.footer-links {
-    display: flex;
-    gap: 25px;
-}
+            /*
+             * Change hamburger icon
+             */
 
-.footer-links a {
-    color: #999;
-    font-size: 12px;
-}
-
-.footer-links a:hover {
-    color: var(--gold);
-}
-
-.copyright {
-    text-align: center;
-    border-top: 1px solid #292929;
-    padding-top: 18px;
-
-    color: #666;
-    font-size: 10px;
-}
+            menuBtn.textContent = isOpen
+                ? "✕"
+                : "☰";
+        });
 
 
-/* =========================
-   MOBILE
-========================= */
+        /*
+         * Close mobile menu
+         * when navigation link is clicked
+         */
 
-@media (max-width: 950px) {
+        navLinks.querySelectorAll("a").forEach(link => {
 
-    .hero {
-        grid-template-columns: 1fr;
+            link.addEventListener("click", () => {
+
+                navLinks.classList.remove("active");
+                document.body.classList.remove("menu-open");
+
+                menuBtn.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                menuBtn.textContent = "☰";
+            });
+
+        });
+
     }
 
-    .hero-image {
-        min-height: 400px;
+
+    /* =================================================
+       SEARCH + FILTER FUNCTION
+    ================================================= */
+
+    function filterBrands() {
+
+        const searchTerm = searchInput
+            ? searchInput.value
+                .trim()
+                .toLowerCase()
+            : "";
+
+        let visibleCount = 0;
+
+
+        brandCards.forEach(card => {
+
+            /*
+             * Get searchable text
+             */
+
+            const searchableText =
+                card.textContent.toLowerCase();
+
+
+            /*
+             * Get category information
+             */
+
+            const categories =
+                (card.dataset.category || "")
+                    .toLowerCase()
+                    .split(/\s+/);
+
+
+            /*
+             * Search match
+             */
+
+            const matchesSearch =
+                searchTerm === "" ||
+                searchableText.includes(searchTerm);
+
+
+            /*
+             * Filter match
+             */
+
+            const matchesFilter =
+                currentFilter === "all" ||
+                categories.includes(currentFilter);
+
+
+            /*
+             * Final result
+             */
+
+            const shouldShow =
+                matchesSearch &&
+                matchesFilter;
+
+
+            if (shouldShow) {
+
+                card.classList.remove("hidden");
+
+                visibleCount++;
+
+            } else {
+
+                card.classList.add("hidden");
+
+            }
+
+        });
+
+
+        /*
+         * Show / hide no results message
+         */
+
+        if (noResults) {
+
+            if (visibleCount === 0) {
+
+                noResults.classList.add("show");
+
+            } else {
+
+                noResults.classList.remove("show");
+
+            }
+
+        }
+
     }
 
-    .brand-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+    /* =================================================
+       FILTER BUTTONS
+    ================================================= */
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            /*
+             * Remove active state
+             */
+
+            filterButtons.forEach(btn => {
+                btn.classList.remove("active");
+            });
+
+
+            /*
+             * Activate clicked button
+             */
+
+            button.classList.add("active");
+
+
+            /*
+             * Get selected category
+             */
+
+            currentFilter =
+                button.dataset.filter
+                    .toLowerCase();
+
+
+            /*
+             * Apply filter
+             */
+
+            filterBrands();
+
+        });
+
+    });
+
+
+    /* =================================================
+       LIVE SEARCH
+    ================================================= */
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "input",
+            () => {
+
+                filterBrands();
+
+            }
+        );
+
     }
 
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+    /* =================================================
+       CATEGORY CARDS
+       Fashion / Sports / Footwear / Luxury
+    ================================================= */
+
+    categoryCards.forEach(categoryCard => {
+
+        categoryCard.addEventListener("click", event => {
+
+            /*
+             * Prevent default anchor jump temporarily
+             */
+
+            event.preventDefault();
+
+
+            /*
+             * Read category title
+             */
+
+            const categoryTitle =
+                categoryCard
+                    .querySelector("h3")
+                    ?.textContent
+                    .trim()
+                    .toLowerCase();
+
+
+            /*
+             * Convert category name
+             * to filter value
+             */
+
+            let categoryFilter = "all";
+
+
+            if (categoryTitle === "fashion") {
+
+                categoryFilter = "fashion";
+
+            } else if (categoryTitle === "sports") {
+
+                categoryFilter = "sports";
+
+            } else if (categoryTitle === "footwear") {
+
+                categoryFilter = "footwear";
+
+            } else if (categoryTitle === "luxury") {
+
+                categoryFilter = "luxury";
+
+            }
+
+
+            /*
+             * Update active filter button
+             */
+
+            filterButtons.forEach(button => {
+
+                const buttonFilter =
+                    button.dataset.filter
+                        .toLowerCase();
+
+                button.classList.toggle(
+                    "active",
+                    buttonFilter === categoryFilter
+                );
+
+            });
+
+
+            /*
+             * Update current filter
+             */
+
+            currentFilter = categoryFilter;
+
+
+            /*
+             * Clear search
+             */
+
+            if (searchInput) {
+                searchInput.value = "";
+            }
+
+
+            /*
+             * Apply category filter
+             */
+
+            filterBrands();
+
+
+            /*
+             * Scroll to brands section
+             */
+
+            const brandsSection =
+                document.getElementById("brands");
+
+            if (brandsSection) {
+
+                brandsSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        });
+
+    });
+
+
+    /* =================================================
+       BRAND CARD INTERACTION
+    ================================================= */
+
+    brandCards.forEach(card => {
+
+        /*
+         * Keyboard accessibility
+         */
+
+        card.addEventListener("keydown", event => {
+
+            if (
+                event.key === "Enter" ||
+                event.key === " "
+            ) {
+
+                const visitButton =
+                    card.querySelector(".visit-btn");
+
+                if (visitButton) {
+
+                    event.preventDefault();
+
+                    visitButton.click();
+
+                }
+
+            }
+
+        });
+
+    });
+
+
+    /* =================================================
+       AFFILIATE LINK TRACKING
+       
+       NOTE:
+       Your current links are normal URLs.
+       Later replace them with your real
+       affiliate tracking URLs.
+    ================================================= */
+
+    const affiliateLinks =
+        document.querySelectorAll(".visit-btn");
+
+
+    affiliateLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            /*
+             * Brand name for analytics
+             */
+
+            const card =
+                link.closest(".brand-card");
+
+            const brandName =
+                card
+                    ?.querySelector("h3")
+                    ?.textContent
+                    .trim();
+
+
+            /*
+             * Save last clicked brand locally
+             *
+             * This does NOT create affiliate earnings.
+             * It is only useful for basic local tracking.
+             */
+
+            if (brandName) {
+
+                localStorage.setItem(
+                    "stylegate_last_brand",
+                    brandName
+                );
+
+            }
+
+        });
+
+    });
+
+
+    /* =================================================
+       EXTERNAL LINKS
+    ================================================= */
+
+    affiliateLinks.forEach(link => {
+
+        /*
+         * Open external stores safely
+         */
+
+        link.setAttribute(
+            "target",
+            "_blank"
+        );
+
+        link.setAttribute(
+            "rel",
+            "noopener noreferrer"
+        );
+
+    });
+
+
+    /* =================================================
+       RESET SEARCH WHEN ESC IS PRESSED
+    ================================================= */
+
+    if (searchInput) {
+
+        searchInput.addEventListener(
+            "keydown",
+            event => {
+
+                if (event.key === "Escape") {
+
+                    searchInput.value = "";
+
+                    currentFilter = "all";
+
+
+                    filterButtons.forEach(button => {
+
+                        button.classList.toggle(
+                            "active",
+                            button.dataset.filter === "all"
+                        );
+
+                    });
+
+
+                    filterBrands();
+
+                    searchInput.blur();
+
+                }
+
+            }
+        );
+
     }
-}
 
 
-@media (max-width: 650px) {
+    /* =================================================
+       NAVBAR SHADOW ON SCROLL
+    ================================================= */
 
-    .nav-container {
-        height: 65px;
+    const navbar =
+        document.querySelector(".navbar");
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            if (!navbar) return;
+
+
+            if (window.scrollY > 20) {
+
+                navbar.style.boxShadow =
+                    "0 5px 25px rgba(0,0,0,.06)";
+
+            } else {
+
+                navbar.style.boxShadow =
+                    "none";
+
+            }
+
+        },
+        { passive: true }
+    );
+
+
+    /* =================================================
+       INITIALIZE
+    ================================================= */
+
+    filterBrands();
+
+
+    /*
+     * Set accessibility attribute
+     */
+
+    if (menuBtn) {
+
+        menuBtn.setAttribute(
+            "aria-label",
+            "Open navigation menu"
+        );
+
+        menuBtn.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
     }
 
-    .menu-btn {
-        display: block;
-    }
 
-    .nav-links {
-        display: none;
+    /* =================================================
+       CONSOLE MESSAGE
+       Developer information only
+    ================================================= */
 
-        position: absolute;
-        top: 65px;
-        left: 0;
+    console.log(
+        "%cStyleGate",
+        "color:#bd9150;font-size:20px;font-weight:bold;"
+    );
 
-        width: 100%;
+    console.log(
+        "Fashion discovery website initialized."
+    );
 
-        padding: 20px;
-
-        background: var(--light);
-
-        flex-direction: column;
-        gap: 18px;
-
-        border-bottom: 1px solid var(--border);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hero {
-        width: 94%;
-        margin-top: 15px;
-    }
-
-    .hero-content {
-        padding: 45px 28px;
-    }
-
-    .hero h1 {
-        font-size: 50px;
-    }
-
-    .hero-image {
-        min-height: 320px;
-    }
-
-    .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .brand-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .category-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about {
-        padding: 45px 28px;
-    }
-
-    .footer-top {
-        flex-direction: column;
-        gap: 25px;
-    }
-
-    .footer-links {
-        flex-wrap: wrap;
-    }
-}
+});
+```
