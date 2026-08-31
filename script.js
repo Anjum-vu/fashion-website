@@ -4,282 +4,165 @@
    Simple & Easy to Edit
 ========================= */
 
+document.addEventListener("DOMContentLoaded", function () {
 
-/* =========================
-   MOBILE MENU
-========================= */
+    /* =========================
+       MOBILE MENU
+    ========================= */
 
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
 
-if (menuBtn && navLinks) {
+    if (menuBtn && navLinks) {
 
-    menuBtn.addEventListener("click", function () {
+        menuBtn.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+        });
 
-        navLinks.classList.toggle("active");
+        // Close mobile menu after clicking a link
+        const navItems = navLinks.querySelectorAll("a");
 
-    });
-
-}
-
-
-/* =========================
-   BRAND SEARCH + FILTER
-========================= */
-
-const searchInput =
-    document.getElementById("brandSearch");
-
-const filterButtons =
-    document.querySelectorAll(".filter-btn");
-
-const brandCards =
-    document.querySelectorAll(".brand-card");
-
-const noResults =
-    document.getElementById("noResults");
-
-
-let currentFilter = "all";
-
-
-function filterBrands() {
-
-    const searchText =
-        searchInput.value.toLowerCase().trim();
-
-    let visibleBrands = 0;
-
-
-    brandCards.forEach(function (card) {
-
-        const brandName =
-            card.querySelector("h3")
-                .textContent
-                .toLowerCase();
-
-        const category =
-            card.getAttribute("data-category")
-                .toLowerCase();
-
-
-        const matchesSearch =
-            brandName.includes(searchText);
-
-
-        const matchesFilter =
-            currentFilter === "all" ||
-            category.includes(currentFilter);
-
-
-        if (matchesSearch && matchesFilter) {
-
-            card.style.display = "";
-
-            visibleBrands++;
-
-        } else {
-
-            card.style.display = "none";
-
-        }
-
-    });
-
-
-    if (noResults) {
-
-        if (visibleBrands === 0) {
-
-            noResults.style.display = "block";
-
-        } else {
-
-            noResults.style.display = "none";
-
-        }
-
+        navItems.forEach(function (item) {
+            item.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+            });
+        });
     }
 
-}
+
+    /* =========================
+       BRAND FILTERS
+    ========================= */
+
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const brandCards = document.querySelectorAll(".brand-card");
+    const noResults = document.getElementById("noResults");
+
+    filterButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            // Remove active class from all buttons
+            filterButtons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
+
+            // Make clicked button active
+            button.classList.add("active");
+
+            const filter = button.getAttribute("data-filter");
+
+            let visibleBrands = 0;
+
+            brandCards.forEach(function (card) {
+
+                const categories = card
+                    .getAttribute("data-category")
+                    .toLowerCase();
+
+                // Show all brands
+                if (filter === "all") {
+
+                    card.style.display = "";
+
+                    visibleBrands++;
+
+                }
+
+                // Show matching brands
+                else if (categories.includes(filter)) {
+
+                    card.style.display = "";
+
+                    visibleBrands++;
+
+                }
+
+                // Hide non-matching brands
+                else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
 
 
-/* =========================
-   SEARCH
-========================= */
-
-if (searchInput) {
-
-    searchInput.addEventListener("input", function () {
-
-        filterBrands();
-
-    });
-
-}
-
-
-/* =========================
-   FILTER BUTTONS
-========================= */
-
-filterButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-
-
-        filterButtons.forEach(function (btn) {
-
-            btn.classList.remove("active");
+            // Show / hide "No brand found"
+            if (visibleBrands === 0) {
+                noResults.style.display = "block";
+            } else {
+                noResults.style.display = "none";
+            }
 
         });
 
-
-        button.classList.add("active");
-
-
-        currentFilter =
-            button.getAttribute("data-filter");
-
-
-        filterBrands();
-
-
-        // Scroll to brands
-
-        document.getElementById("brands")
-            .scrollIntoView({
-                behavior: "smooth"
-            });
-
     });
 
-});
 
+    /* =========================
+       CATEGORY CARDS
+    ========================= */
 
-/* =========================
-   CATEGORY CARDS
-========================= */
+    const categoryCards = document.querySelectorAll(".category-card");
 
-const categoryLinks =
-    document.querySelectorAll(
-        ".category-card"
-    );
+    categoryCards.forEach(function (category) {
 
+        category.addEventListener("click", function (event) {
 
-categoryLinks.forEach(function (card) {
+            event.preventDefault();
 
-    card.addEventListener("click", function () {
+            const categoryClass = Array.from(category.classList)
+                .find(function (className) {
 
-        const category =
-            card.getAttribute("data-category-link");
-
-
-        if (!category) {
-            return;
-        }
-
-
-        currentFilter = category;
-
-
-        filterButtons.forEach(function (button) {
-
-            if (
-                button.getAttribute("data-filter")
-                === category
-            ) {
-
-                filterButtons.forEach(function (btn) {
-
-                    btn.classList.remove("active");
+                    return ["fashion", "sports", "shoes", "luxury"]
+                        .includes(className);
 
                 });
 
-                button.classList.add("active");
+
+            if (!categoryClass) {
+                return;
+            }
+
+
+            // Convert category name to filter name
+            let filterName = categoryClass;
+
+            if (categoryClass === "shoes") {
+                filterName = "footwear";
+            }
+
+
+            // Find matching filter button
+            const matchingButton = document.querySelector(
+                `.filter-btn[data-filter="${filterName}"]`
+            );
+
+
+            if (matchingButton) {
+
+                // Activate the filter
+                matchingButton.click();
+
+                // Scroll to brands section
+                const brandsSection =
+                    document.getElementById("brands");
+
+                if (brandsSection) {
+
+                    brandsSection.scrollIntoView({
+                        behavior: "smooth"
+                    });
+
+                }
 
             }
 
         });
 
-
-        filterBrands();
-
     });
 
-});
-
-
-/* =========================
-   CLOSE MOBILE MENU
-========================= */
-
-const navItems =
-    document.querySelectorAll(
-        ".nav-links a"
-    );
-
-
-navItems.forEach(function (link) {
-
-    link.addEventListener("click", function () {
-
-        navLinks.classList.remove("active");
-
-    });
 
 });
-
-
-/* =========================
-   BRAND COUNT
-========================= */
-
-function updateBrandCount() {
-
-    const count =
-        document.querySelectorAll(
-            ".brand-card"
-        ).length;
-
-
-    const heroCount =
-        document.getElementById(
-            "heroBrandCount"
-        );
-
-
-    if (heroCount) {
-
-        heroCount.textContent =
-            count + "+";
-
-    }
-
-}
-
-
-updateBrandCount();
-
-
-/* =========================
-   CURRENT YEAR
-========================= */
-
-const copyright =
-    document.querySelector(".copyright");
-
-
-if (copyright) {
-
-    const year =
-        new Date().getFullYear();
-
-
-    copyright.innerHTML =
-        "© " +
-        year +
-        " StyleGate. All rights reserved.";
-
-}
 ```
